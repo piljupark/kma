@@ -1,0 +1,398 @@
+@charset "utf-8";
+
+/* ******************  Default CSS ********************** */
+*{ margin: 0; padding: 0; box-sizing: border-box; }
+/* section{ display: block; width: 100%; height: 500px; border: 10px solid green; } */
+html{ scroll-behavior: smooth; font-size: 10px; }
+body, html{ margin: 0; padding: 0; font-family: 'SUIT'; }
+ol, ul, li{ list-style: none; }
+a{ font-family: inherit; margin: 0; padding: 0; vertical-align: baseline; text-decoration: none; background: transparent; cursor: pointer; }
+button{ font-family: inherit; border: none; box-shadow: none; cursor: pointer; }
+
+/* ******************  Common CSS ********************** */
+.common-area{ width: 1920px; margin: 0 auto; }
+.common-cont-area{ width: 1200px; margin: 0 auto; }
+.p100{ padding: 100px 0; }
+.comm-tit{ font-size: 32px; font-weight: 800; line-height: 32px; letter-spacing: -0.64px; }
+.comm-tit-box{ display: flex; gap: 14px; align-items: center; margin-bottom: 54px; }
+.icon-star{ display: inline-block; width: 18px; height: 19px; background: url('/images/icon_star.svg') no-repeat center center; vertical-align: baseline; }
+.blind { position: absolute; left: -3721em; width: 1px; height: 1px; }
+.for-pc{ display: block; }
+.for-mo{ display: none; }
+.no-data-cont{ padding: 15px; width: 100%; }
+.no-data-cont p{ text-align: center; color: #777; font-size: 16px; font-weight: normal; line-height: 16px; }
+
+/* ******************  gnb ********************** */
+header{ z-index: 99;position: fixed; width: 100%; height: 100px; font-family: 'Outfit', sans-serif; border-bottom: 1px solid rgba(212, 212, 212, 0.38); transition: all 0.3s ease; }
+header.fixed{ background: #000; border-bottom: 1px solid #000; }
+.header-inner{ display: flex; justify-content: space-between; width: 1200px; height: 100%; }
+.header-inner h1 .logo-wrap{ display: flex; height: 100%; align-items: center; }
+.header-inner h1 .logo-wrap span{ display: inline-block; margin-left: 12px; padding-left: 12px; line-height: 20px; font-family: 'SUIT'; color: #fff; font-size: 26px; font-weight: 500; letter-spacing: -0.52px; border-left: 1px solid #fff; }
+.header-inner nav ul.menu-items{ display: flex; gap: 97px; margin: 0; height: 100%; }
+.header-inner nav ul.menu-items .menu-item a{ display: flex; align-items: center; height: 100%; color: #fff; font-family: Outfit; font-size: 20px; font-weight: bold; letter-spacing: normal; text-align: center; }
+.header-inner nav ul.menu-items .menu-item.on a{ transition: all 0.25s; color: #02f359; }
+
+/* ******************  main-section ********************** */
+.main-section{ display: block; width: 100%; height: 765px; }
+.main-section .visual-sec{ width: 100%; height: 100%; }
+.main-section .visual-sec .main-swiper{ position: relative; width: 100%; height: 100%; }
+.main-section .visual-sec .main-swiper .swiper-wrapper .swiper-slide{ position: relative; }
+.main-section .visual-sec .main-swiper .swiper-wrapper .swiper-slide::before{ content: ''; position: absolute; top: 0; left: 0; right: 0; width: 100%; height: 100%; background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%), linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)); }
+
+.main-section .visual-sec .main-swiper .swiper-wrapper .swiper-slide:nth-child(1){ background: url(/images/1.jpg) no-repeat center center / cover; }
+.main-section .visual-sec .main-swiper .swiper-wrapper .swiper-slide:nth-child(2){ background: url(/images/2.jpg) no-repeat center center / cover; }
+.main-section .visual-sec .main-swiper .swiper-wrapper .swiper-slide:nth-child(3){ background: url(/images/3.jpg) no-repeat center center / cover; }
+
+
+.main-section .visual-sec .txt-box { position: absolute; left: calc(50% - 480px - 120px); top: 50%; width: 940px; transform: translateY(-50%); z-index: 10;}
+.main-section .visual-sec .txt-box > span { color: #fff; font-size: 20px; line-height: 24px; letter-spacing: -0.4px; transform: translateY(20px); opacity: 0; word-break: keep-all; transition: 1s 0.4s; }
+.main-section .visual-sec .txt-box .txt { margin: 20px 0 52px 0; color: #fff; font-size: 48px; font-weight: normal; line-height: 57.6px; letter-spacing: -0.96px; word-break: auto-phrase; transform: translateY(20px); opacity: 0; transition: 1s 0.2s; }
+.main-section .visual-sec .txt-box .txt strong{ display: block; font-weight: 900; }
+.main-section .visual-sec .txt-box button{ padding: 0 16px; height: 50px; color: #fff; font-size: 14px; font-weight: 600; background: #4f00f6; border-radius: 6px; cursor: pointer; transform: translateY(20px); opacity: 0; transition: 1s 0.4s; }
+.main-section .visual-sec .txt-box button i{ display: inline-block; margin-left: 47px; width: 20px; height: 20px; vertical-align: middle; background: url('/images/icon_arrow_right.png') no-repeat center center; }
+.main-section .visual-sec .txt-box button:hover{ box-shadow: 0 20px 38px rgba(0,0,0,.16); transition: all 0.25s; }
+.main-section .visual-sec .swiper-slide-active { transform: scale(1.0); }
+.main-section .visual-sec .swiper-slide-active .txt-box > span,
+.main-section .visual-sec .swiper-slide-active .txt-box .txt,
+.main-section .visual-sec .swiper-slide-active .txt-box button { transform: translateY(0); opacity: 1; }
+.main-section .visual-sec .all-box { z-index: 20; position: absolute; width: 240px; height: fit-content; top: 50%; left: calc(50% + 285px + 78px ); transform: translateY(-50%); }
+.main-section .visual-sec .progress-box { z-index: 11; position: relative; width: 100%; height: 100%; }
+.main-section .visual-sec .swiper-pagination { display: flex; flex-direction: column; gap: 44px; color: #fff; justify-content: space-between; position: static; text-align: left; }
+.main-section .visual-sec .arrow-box { position: relative; width: 80px; height: 50px; }
+.main-section .visual-sec { display: flex; justify-content: center; align-items: center;}
+.main-section .visual-sec .text-img-box { width: 100%; height: 665px; background: url("../images/main_text.png") no-repeat center center;}
+/* Swiper 불릿 기본 스타일 */
+.main-section .swiper-pagination-bullet { position: relative; margin: 0 !important; width: 100% !important; height: fit-content !important; text-align: left; border-radius: 0 !important; opacity: 1; background-color: transparent !important; }
+.main-section .swiper-pagination-bullet em { display: inline-block; width: 100%; margin-bottom: 15px; font-size: 16px;  font-style: normal; line-height: 19.2px; font-weight: bold; letter-spacing: -0.32px; color: rgba(255, 255, 255, 0.6); word-break: keep-all; }
+.main-section .swiper-pagination-bullet.swiper-pagination-bullet-active em{ color: rgba(255, 255, 255, 1); }
+.main-section .swiper-pagination-bullet i { position: absolute; bottom: 0; left: 0; z-index: 1; width: 100%; height: 3px; background-color: rgba(217, 217, 217, 0.3); /* 프로그레스 바 배경 */ }
+.main-section .swiper-pagination-bullet b { position: absolute; bottom: 0; left: 0; z-index: 2; width: 0%; height: 3px; background-color: #fff; /* 프로그레스 바 채워지는 부분 */ }
+/* 활성화된 불릿 스타일 */
+.main-section .swiper-pagination-bullet-active { background-color: transparent !important; }
+.main-section .swiper-pagination-bullet-active b { animation-name: countingBar; animation-duration: 3s; /* autoplay 시간과 맞춤 */ animation-timing-function: ease-in; animation-iteration-count: 1; animation-direction: alternate; animation-fill-mode: forwards; }
+
+/* bullet custom progress :: Animation */
+@keyframes countingBar {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+/* ******************  banner-section ********************** */
+.banner-section{ padding: 70px 0; background-color: #f0f3fc; }
+.banner-section .banner-swiper{ position: relative; width: 100%; height: 213px; }
+.banner-section .banner-swiper .swiper-slide{ height: 180px; border-radius: 16px; cursor: pointer; }
+.banner-section .banner-swiper .swiper-slide:nth-child(1){ background: url('/images/banner_slide_bg_01.jpg') no-repeat center center / cover; }
+.banner-section .banner-swiper .swiper-slide:nth-child(2){ background: url('/images/banner_slide_bg_01.png') no-repeat center center / cover; }
+.banner-section .banner-swiper .swiper-slide:nth-child(3){ background: url('/images/banner_slide_bg_01.png') no-repeat center center / cover; }
+.banner-section .banner-swiper .txt-box{ position: absolute; top: 50%; right: 60px; transform: translateY(-50%); text-align: right;}
+.banner-section .banner-swiper .txt-box span{ display: block; color: rgba(255, 255, 255, 0.7); font-size: 20px; font-weight: 600; line-height: 24px; letter-spacing: -0.4px; text-align: right; }
+.banner-section .banner-swiper .txt-box p{ display: flex; justify-content: flex-end; align-items: center; gap: 5px; margin-top: 15px; color: #fff; font-size: 28px; font-weight: 800; line-height: 28px; letter-spacing: -1.68px; text-align: right; }
+.banner-section .swiper-pagination{ bottom: 0 !important; }
+.banner-section .swiper-pagination-bullet{ background-color: #d9d9d9 !important; opacity: 1 !important; }
+.banner-section .swiper-pagination-bullet-active{ background-color: #4f00f6 !important; }
+
+/* ******************  컨퍼런스 해외연수 ********************** */
+.navi-wrap{ display: flex; align-items: center; gap: 6px; width: fit-content; height: 24px; }
+.navi-wrap .swiper-button-next, .navi-wrap .swiper-button-prev{ position: unset; width: 24px; height: 24px; margin-top: unset; }
+.navi-wrap .swiper-button-next{ background: url(/images/icon_next.svg) no-repeat center center; }
+.navi-wrap .swiper-button-prev{ background: url(/images/icon_prev.svg) no-repeat center center; }
+.swiper-button-next.swiper-button-disabled{ background: url(/images/icon_next_disabled.svg) no-repeat center center; }
+.swiper-button-prev.swiper-button-disabled{ background: url(/images/icon_prev_disabled.svg) no-repeat center center; }
+.navi-wrap .swiper-button-next::after, .navi-wrap .swiper-button-prev::after{ display: none; }
+.swiper-slide .edu-img{ display: inline-block; width: 100%; height: 280px; border-radius: 16px; cursor: pointer; }
+.swiper-slide .edu-img.no-img-data{ display: inline-block; width: 100%; height: 280px; border-radius: 16px; background: #efefef url('/images/img_no_data.png') no-repeat center center / cover; cursor: pointer; }
+.conference-swiper .swiper-slide .base-info{ margin: 32px 0 12px; }
+.conference-swiper .swiper-slide .base-info .classify{ display: inline-block; margin-bottom: 15px; color: #4f00f6; font-size: 16px; font-weight: bold; line-height: 18px; letter-spacing: normal; }
+.conference-swiper .swiper-slide .base-info > h3{  min-height: 59px; font-size: 22px; font-weight: bold; line-height: 29.7px; letter-spacing: -0.66px; cursor: pointer; text-overflow: ellipsis; overflow: hidden; word-break: break-word; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical }
+.conference-swiper .swiper-slide .price-area .badge{ display: inline-block; padding: 0 8.5px; width: auto; height: 18px; line-height: 18px; color: #f26c4f; font-size: 12px; font-weight: 500; letter-spacing: normal; text-align: center; border: 1px solid #e3e3e3; background: #f2f2f2; }
+.conference-swiper .swiper-slide .price-area .prd{ margin: 15px 0 20px; padding-bottom: 35px; color: #777; font-size: 16px; font-weight: normal; line-height: 16px; letter-spacing: normal; border-bottom: 1px solid #e2e2e2; }
+.conference-swiper .swiper-slide .price-area .price{ color: #101010; font-size: 14px; font-weight: normal; line-height: 25px; }
+.conference-swiper .swiper-slide .price-area .price strong{ display: inline-block; margin-right: 3px; font-family: 'SUITVariable'; font-size: 20px; font-weight: 900; line-height: 20px; letter-spacing: -0.4px; vertical-align: text-bottom; }
+
+.conference-section:nth-of-type(even) { background: #f8f8f8;}
+
+/* ******************  일반 해외연수 ********************** */
+.regular-section{ background: #f8f8f8; }
+.regular-swiper .swiper-slide .base-info{ margin: 32px 0 12px; }
+.regular-swiper .swiper-slide .base-info .classify{ display: inline-block; margin-bottom: 15px; color: #4f00f6; font-size: 16px; font-weight: bold; line-height: 18px; letter-spacing: normal; }
+.regular-swiper .swiper-slide .base-info > h3{  min-height: 59px; font-size: 22px; font-weight: bold; line-height: 29.7px; letter-spacing: -0.66px; cursor: pointer; text-overflow: ellipsis; overflow: hidden; word-break: break-word; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical }
+.regular-swiper .swiper-slide .price-area .badge{ display: inline-block; padding: 0 8.5px; width: auto; height: 18px; line-height: 18px; color: #f26c4f; font-size: 12px; font-weight: 500; letter-spacing: normal; text-align: center; border: 1px solid #e3e3e3; background: #f2f2f2; }
+.regular-swiper .swiper-slide .price-area .prd{ margin: 15px 0 20px; padding-bottom: 35px; color: #777; font-size: 16px; font-weight: normal; line-height: 16px; letter-spacing: normal; border-bottom: 1px solid #e2e2e2; }
+.regular-swiper .swiper-slide .price-area .price{ color: #101010; font-size: 14px; font-weight: normal; line-height: 25px; }
+.regular-swiper .swiper-slide .price-area .price strong{ display: inline-block; margin-right: 3px; font-family: 'SUITVariable'; font-size: 20px; font-weight: 900; line-height: 20px; letter-spacing: -0.4px; vertical-align: text-bottom; }
+
+/* ******************  banner-bg-section ********************** */
+.banner-bg-section{ position: relative; width: 100%; height: 238px; background: url(/images/bg_banner_bg_section_240905_01.jpg) no-repeat fixed center; background-size: cover; 	}
+.banner-bg-section .banner-bg-filter{position:absolute; width:100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 0; }
+.banner-bg-section .banner-inner{ position: relative; display: flex; align-items: center; justify-content: center; gap: 30px; width: 100%; height: 100%; z-index: 2;}
+.banner-bg-section .banner-inner span{ color: #fff; font-size: 24px; font-weight: 500; line-height: 36px; letter-spacing: -0.48px; }
+.banner-bg-section .banner-inner span .icon-star{ margin-right: 12px; }
+
+/* ******************  글로벌 연수후기 ********************** */
+.review-section{ position: relative; display: flex; align-items: center; overflow: hidden; height: 85rem; }
+.review-section:before{ position: absolute; content:''; width: 45.5rem; height: 100%; background:#f0f3fc; right:0; transform:translateX(100%); transition: all 0.8s ease-in-out;; transition-delay:0.4s; }
+.review-section.animated:before{transform:translateX(0%);}
+.review-section .area-box{ max-width: 1488px; margin: 0px auto; }
+.review-section .area-box .main-review-wrap{ gap: 4rem; }
+.review-section .area-box .main-review-wrap .left-box{ width: 322px; /*width: 27.96%;*/ }
+.review-section .area-box .main-review-wrap .left-box .main-tit-box p{ margin: 83px 0 20px; color: #4f00f6; font-size: 16px; line-height: 18px; letter-spacing: normal; }
+.review-section .area-box .main-review-wrap .left-box .main-tit-box .tit{ font-size: 28px; font-weight: 800; line-height: 37.8px; letter-spacing: -1.12px; opacity: 0; transform: translateY(30px); }
+.review-section .area-box .main-review-wrap .left-box .tag-area{ display: flex; align-items: center; flex-wrap: wrap; gap: 8px 15px; margin-top: 43px; }
+.review-section .area-box .main-review-wrap .left-box .tag-area span{ color: #4f00f6; font-size: 1.4rem; font-weight: 300; line-height: 1.8rem; letter-spacing: normal; }
+.review-section .area-box .main-review-wrap .right-box{ width: 829.94px; /*width:72.04%;*/ margin-right:-20rem; }
+.review-section .area-box .main-review-wrap .right-box .slick-dots{ justify-content: center; }
+/* 연수후기 슬라이드 컨텐츠 */
+.main-review-list{ width: 30rem;}
+.main-review-list > div{ width:100%; }
+.main-review-list .slick-list{ overflow:visible; }
+.main-review-list .list-item{ position: relative; margin-right: 4.2rem; transition: all 0.8s ease-in-out; height:32rem; transform:translateX(-30px); opacity:0; }
+.main-review-list .list-item:nth-child(2){ transition-delay:0.8s; }
+.main-review-list .list-item:nth-child(3){ transition-delay:1s; }
+.main-review-list .list-item:nth-child(4){ transition-delay:1.25s; }
+.main-review-list .list-item:nth-child(5){ transition-delay:1.5s; }
+.main-review-list .list-item .item-inner{ overflow: hidden; position: absolute; width:100%; padding: 3.5rem 2.8rem; box-sizing: border-box; min-height: 32rem; background:#fff; box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.1), 0 31px 31px 0 rgba(0, 0, 0, 0.09), 0 71px 42px 0 rgba(0, 0, 0, 0.05), 0 125px 50px 0 rgba(0, 0, 0, 0.01), 0 196px 55px 0 rgba(0, 0, 0, 0); transition:all 0.3s linear, min-height 0.3s linear; border-radius: 1.6rem; top:50%; transform:translateY(-50%); }
+.main-review-list .list-item .item-inner::before{ z-index: -1; content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 1.6rem; background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%), linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)); }
+.main-review-list.slide-on .list-item{ transition-delay:0s !important; }
+.main-review-list .list-item .item-inner .label{ color: #02f359; font-family: Poppins; font-size: 14px; font-weight: 800; line-height: 18px; letter-spacing: normal; }
+.main-review-list .list-item .item-inner .txt-box{ position: absolute; left: 0; bottom: 0; width: 100%; padding: 3.5rem; }
+.main-review-list .list-item .item-inner .txt-box .tit{ font-size: 1.8rem; line-height: 2.52rem; color:#fff; font-weight:700; transition:all 0.4s ease-in-out; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
+.main-review-list .list-item .item-inner .txt-box .txt{ margin: 1.7rem 0 7.6rem; font-size: 1.4rem; line-height: 1.96rem; color:#fff; text-overflow: ellipsis; overflow: hidden; word-break: break-word; display: -webkit-box;	-webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.main-review-list .list-item .item-inner .txt-box .classify{ display: flex; align-items: center; justify-content: flex-end; text-align: right; }
+.main-review-list .list-item .item-inner .txt-box .classify span{ color: rgba(255, 255, 255, 0.6); font-family: Poppins; font-size: 1.3rem; font-weight: 800; line-height: 1.8rem; letter-spacing: normal; }
+.main-review-list .list-item .item-inner .txt-box .classify span:last-child{ color: rgba(255, 255, 255, 0.8); }
+.main-review-list .list-item .item-inner .txt-box .classify i{ display: inline-block; width: 16px; height: 16px; background: url('/images/icon_gt.png') no-repeat center center; vertical-align: middle; }
+.main-review-list .shorts-container{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.main-review-list .shorts-container iframe{ width: 100%; height: 100%; }
+/* 연수후기 슬라이드 활성화 */
+.main-review-list .list-item.off .item-inner{ height: 32rem; }
+.main-review-list .list-item.slick-current .item-inner{ width: 30rem; min-height: 42rem; transform: translate(-4.2rem, -50%); background:skyblue; box-shadow:none;}
+/* 연수후기 슬라이드 활성화 off */
+.main-review-list .list-item.off:not(.slick-current){transform:translateX(-530%) !important; transition-delay:0s !important;}
+.main-review-list .list-item.off.slick-current{transition-delay:0s !important;}
+.main-review-list .list-item.off:not(.slick-current) .item-inner{backdrop-filter: blur(10px); background:none;}
+/* 연수후기 슬라이드 Custom Dots */
+.main-review-list .slick-dots{ position: absolute; display: flex; vertical-align: top; margin: 0; bottom: -12rem; left: -3.5rem;}
+.main-review-list .slick-dots li{ width: 8px; height: 8px; margin: 0 8px 0 0; }
+.main-review-list .slick-dots li:last-child{ margin-right: 0; }
+.main-review-list .slick-dots li button{ cursor:pointer; margin:0px; padding:0px; vertical-align:top; width: 0.8rem; height: 0.8rem; background-color:#d9d9d9; -webkit-border-radius:50%; -moz-border-radius:50%; -o-border-radius:50%; border-radius:50%; }
+.main-review-list .slick-dots li.slick-active button{ background: #4f00f6; opacity:1.0; }
+.main-review-list .slick-dots li button:before{ display: none; }
+
+/* 글로벌 연수후기 :: Animation */
+@keyframes image-zoom-out {
+	from {
+		transform: scale(1.08,1.08)
+	}
+	to {
+		transform: scale(1.0,1.0)
+	}
+}
+@keyframes text-active-animation {
+	from {
+		opacity:0; filter:Alpha(opacity=0);
+		-webkit-transform: translateY(50px); 
+		transform: translateY(50px); 
+	}
+	to {
+		opacity:1.0;filter:Alpha(opacity=100);
+		-webkit-transform: translateY(0); 
+		transform: translateY(0); 
+	}
+}
+@keyframes text-fade-out {
+	from {
+		opacity:1.0;filter:Alpha(opacity=100);
+	}
+	to {
+		opacity:0;filter:Alpha(opacity=0);
+	}
+}
+
+.animated .main-tit-box .tit-en.splitting .char{
+	-webkit-animation: text-active-animation 1.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+	animation: text-active-animation 1.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+.animated .main-tit-box .comm-tit,
+.animated .main-tit-box p,
+.animated .main-tit-box .tit,
+.animated .main-tit-box .tag-area{
+	-webkit-animation: text-active-animation 1.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+	animation: text-active-animation 1.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+.animated .main-tit-box .comm-tit{ animation-delay:0.2s; }
+.animated .main-tit-box p{ animation-delay:0.4s; }
+.animated .main-tit-box .tit{ animation-delay:0.6s; }
+.animated .main-tit-box .tag-area{animation-delay:0.8s;}
+
+.main-review-wrap{ position: relative; display: flex; justify-content: space-between; align-items: center; }
+
+/* animated */
+#review.animated .main-review-list .list-item{transform:none; opacity:1;}
+.main-review-list .list-item.first.slick-current{transform:translate(-0rem, -0%) scale(0.5); transition-delay:0.5s}
+#review.animated .main-review-list .list-item.first.slick-current{transform:translate(-0rem, -0%) scale(1);}
+
+/* ******************  Coming Soon ********************** */
+[class*="comingSoon-"] { width: 100%; height: 150px; background-size: contain !important;}
+.comingSoon-6 { background: url("../images/month_6_comingsoon.png") no-repeat 0;}
+
+/* ******************  footer ********************** */
+footer{ padding: 60px 0 50px; background: #000; }
+footer .contact-box{ padding: 45px 0 60px; color: #fff; text-align: center; border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 20px; }
+footer .contact-box > span{ font-size: 16px; font-weight: 900; line-height: 18px; color: rgba(255, 255, 255, 0.8); }
+footer .contact-box .tel-wrap{ margin: 34px auto 43px; color: #fff; }
+footer .contact-box .tel-wrap a{ color: #fff; font-size: 40px; line-height: 40px; letter-spacing: normal; font-weight: 800; }
+footer .contact-box .tel-wrap a:last-child{ margin-top: 40px; display: block; width: 100%; }
+footer .contact-box .inquiry{ color: rgba(255, 255, 255, 0.8); font-size: 24px; font-weight: normal; line-height: 18px; letter-spacing: normal; border-bottom: 1px solid rgba(255, 255, 255, 0.6); }
+footer .contact-box .inquiry strong{ color: #fff; font-weight: 800; }
+footer .site-link-wrap{ margin: 50px auto 32px; text-align: center; }
+footer .site-link-wrap a{ padding-right: 20px; margin-right: 20px; color: #fff; font-size: 16px; font-weight: 800; letter-spacing: normal; line-height: 16px; border-right: 1px solid rgba(255, 255, 255, 0.4); }
+footer .site-link-wrap a:nth-of-type(3){ border-right: none; }
+footer .copyright{ display: block; margin-top: 32px; color: rgba(255, 255, 255, 0.4); font-size: 12px; font-weight: normal; line-height: 16.8px; text-align: center; letter-spacing: normal; }
+
+/* ******************  Quick Menu ********************** */
+.quick-menu{ position: fixed; right: 20px; bottom: 20px; display: flex; flex-wrap: wrap; gap: 8px; width: 40px; height: fit-content; transition: all 0.25s; opacity: 0; visibility: hidden; z-index: 99; }
+.quick-menu.on{ opacity: 1; visibility: visible; }
+.quick-menu a{ display: inline-block; width: 40px; height: 40px; border-radius: 100%; }
+.quick-menu .kakao{ background: #000 url('/images/icon_quick_kakao.svg') no-repeat center center / 60%; }
+.quick-menu .blog{ background: #000 url('/images/icon_quick_blog.svg') no-repeat center center / 60%; }
+.quick-menu .youtube{ background: #000 url('/images/icon_quick_youtube.svg') no-repeat center center / 60%; }
+.quick-menu .mail{ background: #000 url('/images/icon_quick_mail.svg') no-repeat center center / 60%; }
+.quick-menu .gototop{ background: #4f00f6 url('/images/icon_quick_gototop.svg') no-repeat center center / 60%; }
+
+@media screen and (max-width: 1280px) {
+	/* ******************  Common CSS ********************** */
+	.for-pc{ display: none; }
+	.for-mo{ display: block; }
+	.common-area{ width: 100%; padding: 0 20px; }
+	.common-cont-area{ width: 100%; padding: 0 20px; }
+	.comm-tit-box{ margin-bottom: 20px; }
+	.comm-tit{ font-size: 18px; line-height: 18px; letter-spacing: -0.36px; }
+	.p100{ padding: 40px 0; }
+	
+	/* ******************  gnb ********************** */
+	header{ height: auto; padding: 11px 0; border-bottom: none; }
+	.logo-wrap > img{ width: 40px; }
+	.header-inner h1 .logo-wrap span{  margin-left: 8px; padding-left: 7px; font-size: 16px; line-height: 16px; }
+	.btn-nav{ width: 24px; height: 24px; background: url('/images/btn_icon_nav.svg') no-repeat center center; }
+	.mobile-menu{ display: inline-block; position: fixed; top: 0; right: -100%; width: 100%; height: 100%; background: #000; z-index: 999; padding: 11px 20px; }
+	.mobile-menu .menu-items{ margin-top: 54px; }
+	.mobile-menu .menu-item{ padding: 5px 16px; }
+	.mobile-menu .menu-item a{ font-family: Outfit; font-size: 20px; font-weight: bold; line-height: 50px; color: #fff; }
+	.mobile-menu .btn-close{ float: right; width: 24px; height: 24px; background: url('/images/icon_close.svg') no-repeat center center; }
+
+	/* ******************  main-section ********************** */
+	.main-section{ width: 100%; height: 380px; }
+	.main-section .visual-sec .txt-box{ width: 100%; left: 0; padding: 0 20px; }
+	.main-section .visual-sec .txt-box > span{ font-size: 14px; line-height: 16.8px; letter-spacing: -0.28px; }
+	.main-section .visual-sec .txt-box button i{ margin-left: 14.3px; width: 16px; height: 16px; }
+	.main-section .visual-sec .txt-box .txt{ margin: 20px 0 37px 0; font-size: 20px; line-height: 24px; letter-spacing: -0.8px; }
+	.main-section .visual-sec .all-box{ width: auto; height: auto; top: unset; bottom: 20px; left: 20px; transform: unset; }
+	.main-section .visual-sec .swiper-pagination{ flex-direction: row; gap: 8px; }
+	.main-section .swiper-pagination-bullet{ width: 8px !important; height: 8px !important; background-color: #d9d9d9 !important; border-radius: 100% !important; }
+	.main-section .swiper-pagination-bullet-active{ background-color: #02f359 !important; }
+
+	/* ******************  banner-section ********************** */
+	.banner-section{ padding: 33.5px 0; }
+	.banner-section .banner-swiper{ height: 148px; }
+	.banner-section .banner-swiper .swiper-slide{ height: 120px; }
+	.banner-section .banner-swiper .txt-box{ left: 30px; }
+	.banner-section .banner-swiper .txt-box span{ text-align: left; font-size: 14px; font-weight: 600; line-height: 16.8px; letter-spacing: -0.28px; }
+	.banner-section .banner-swiper .txt-box p{ margin-top: 4px; text-align: left; font-size: 16px; line-height: 20.8px; letter-spacing: -0.96px; }
+	.banner-section .banner-swiper .txt-box p .text-for-mo{ width: fit-content; color: #fff; }
+
+	/* ******************  컨퍼런스 해외연수 ********************** */
+	.navi-wrap{ height: 20px; }
+	.navi-wrap .swiper-button-next, .navi-wrap .swiper-button-prev{ width: 20px; height: 20px; }
+	.conference-swiper .swiper-slide .base-info{ margin: 15px 0 12px; }
+	.conference-swiper .swiper-slide .base-info .classify{ margin-bottom: 8px; font-size: 10px; line-height: 10px; }
+	.conference-swiper .swiper-slide .base-info > h3{ font-size: 14px; line-height: 18.9px; letter-spacing: -0.42px; }
+	.conference-swiper .swiper-slide .price-area .badge{ height: 16px; line-height: 16px; font-size: 10px; }
+	.conference-swiper .swiper-slide .price-area .prd{ margin: 17px 0 13px; padding-bottom: 17px; font-size: 11px; line-height: 11px; letter-spacing: -0.22px; }
+	.conference-swiper .swiper-slide .price-area .price{ line-height: 8px; font-size: 8px; }
+	.conference-swiper .swiper-slide .price-area .price strong{ font-size: 14px; line-height: 14px; }
+
+	/* ******************  일반 해외연수 ********************** */
+	.regular-swiper .swiper-slide .base-info{ margin: 15px 0 12px; }
+	.regular-swiper .swiper-slide .base-info .classify{ margin-bottom: 8px; font-size: 10px; line-height: 10px; }
+	.regular-swiper .swiper-slide .base-info > h3{ font-size: 14px; line-height: 18.9px; letter-spacing: -0.42px; }
+	.regular-swiper .swiper-slide .price-area .badge{ height: 16px; line-height: 16px; font-size: 10px; }
+	.regular-swiper .swiper-slide .price-area .prd{ margin: 17px 0 13px; padding-bottom: 17px; font-size: 11px; line-height: 11px; letter-spacing: -0.22px; }
+	.regular-swiper .swiper-slide .price-area .price{ line-height: 8px; font-size: 8px; }
+	.regular-swiper .swiper-slide .price-area .price strong{ font-size: 14px; line-height: 14px; }
+
+	/* ******************  banner-bg-section ********************** */
+	.banner-bg-section{ height: 240px; background: url(/images/bg_banner_bg_section_240905_01.jpg) no-repeat center center; background-size: cover; }
+	.banner-bg-section .banner-inner{ flex-direction: column; gap: 20px; }
+	.banner-bg-section .banner-inner span{ font-size: 18px; font-weight: 800;  line-height: 27px; letter-spacing: -0.36px; word-break: auto-phrase; text-align: center; }
+	.banner-bg-section .banner-inner .text-for-mo{ color: rgba(255, 255, 255, 0.6); font-weight: 500; font-size: 14px; line-height: 21px; letter-spacing: -0.28px; }
+	.banner-bg-section .banner-inner .text-for-mo > span{ color: #fff; font-weight: 500; font-size: 14px; line-height: 21px; letter-spacing: -0.28px; }
+	.icon-star{ width: 12px; height: 12.6px; background-size: cover; }
+	.banner-bg-section .banner-inner span:last-child{ text-decoration: underline; text-underline-offset: 5px;}
+
+	
+
+	/* ******************  footer ********************** */
+	footer{ padding: 40px 0 15px; }
+	footer .contact-box{ padding: 0; border: none; border-radius: 0; }
+	footer .contact-box > span{ font-size: 12px; line-height: 15px; letter-spacing: normal; }
+	footer .contact-box .tel-wrap{ margin: 24px auto; }
+	footer .contact-box .tel-wrap a{ font-size: 20px; line-height: 20px; }
+	footer .contact-box .inquiry{ display: inline-block; padding-bottom: 9px; font-size: 16px; }
+	footer .site-link-wrap{ margin: 65px 0 0; }
+	footer .site-link-wrap a{ padding-right: 15px; margin-right: 15px; font-size: 12px; line-height: 12px; letter-spacing: normal; }
+}
+
+@media screen and (max-width: 960px) {
+	/* ******************  main-text-section ********************** */
+	.main-section { position: relative; background-image: linear-gradient(to bottom, rgb(0 0 0), #0000), linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), linear-gradient(to bottom, #d9d9d9, #d9d9d9);}
+	.main-section .visual-sec { position: relative; z-index: 1;}
+	.main-section .visual-sec .text-img-box { background: url("../images/main_text_m.png") no-repeat 0;}
+
+	/* ******************  edu-section ********************** */
+	.swiper-slide .edu-img { height: 168px;}
+
+	/* ******************  banner-section ********************** */
+	.banner-section { padding: 47.5px 0;}
+	.banner-section .banner-swiper { height: 120px;}
+	.banner-section .banner-swiper .swiper-slide { border-radius: 8px;}
+	.banner-section .banner-swiper .txt-box { text-align: left;}
+	.banner-section .banner-swiper .swiper-slide:nth-child(1){ background: url(/images/banner_slide_bg_01.jpg) no-repeat center center / cover; }
+	.banner-bg-section .banner-inner span:last-child { font-size: 14px; text-decoration: none; line-height: 1.5; letter-spacing: -0.28px;}
+
+	/* ******************  글로벌 연수후기 ********************** */
+	.review-section.p100{ padding: 40px 20px; }
+}
+
+@media screen and (max-width: 480px) {
+	/* ******************  main-section ********************** */
+	.visual-sec .txt-box { left: 46%; }
+	.visual-sec .txt-box > h3 { font-size: 1.2rem; }
+	.visual-sec .txt-box > p { font-size: 0.8rem }
+	.visual-sec .all-box { bottom: 0; height: 30px; }
+	
+	/* ******************  글로벌 연수후기 ********************** */
+	.review-section{ height: auto; padding: 40px 20px 70px; }
+	.review-section:before{ display: none; }
+	.main-review-wrap{ flex-direction: column; gap: 20px; align-items: flex-start; } 
+	.review-section .area-box{ margin: unset; width: 100%; }
+	.review-section .area-box .main-review-wrap .left-box{ width: 100%; }
+	.review-section .area-box .main-review-wrap .right-box{ width: 100%; }
+	.review-section .area-box .main-review-wrap .left-box .tag-area.for-pc{ display: none; }
+	.review-section .area-box .main-review-wrap .left-box .main-tit-box p{ margin: 25px 0 12px; font-size: 14px; line-height: 16.8px; letter-spacing: -0.28px; }
+	.review-section .area-box .main-review-wrap .left-box .main-tit-box .tit{ font-size: 24px; line-height: 32.4px; letter-spacing: -0.96px; } */
+
+	.main-review-wrap{ display: block; }
+	.main-review-wrap .left-box{ width:100%; }
+	.main-review-wrap .right-box{ width:100%; margin-right: 0rem; }
+	.main-review-list{ min-height: 38rem; }
+	.main-review-list .list-item{ height: 100%; }
+	.main-review-list .list-item .item-inner{ top: auto; transform: none; padding: 3.5rem 2.8rem; }
+	.main-review-list .list-item.slick-current .item-inner{ width: 100%; height: 38rem; transform:translate(0); min-height: 38rem !important; }
+	.main-review-list .list-item .item-inner .txt-box{ padding: 2.8rem; }
+	.main-review-list .slick-dots{ justify-content: center; left: 0; bottom: -2.8rem; }
+	.main-review-list .list-item:not(.slick-current.slick-active){ opacity: 0; visibility: hidden; }
+	
+	.main-review-list{width:100%; max-width:none;}
+	.main-review-list .list-item{ margin-right:0; }
+}
+
