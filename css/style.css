@@ -56,7 +56,7 @@ canvas {
     padding: 0 20px;
     text-align: center;
     margin-top: min(18.66667%, 65px);
-    font-family: 'SUIT-Variable';
+    font-family: 'SUIT-variable';
     line-height: 1.7;
     font-size: min(3.5vw, 24px);
     box-sizing: border-box;
@@ -236,7 +236,7 @@ canvas {
 }
 
 .int .int-simple {
-    font-family: 'SUIT-Variable';
+    font-family: 'SUIT-variable';
     color: #292929;
     font-size: 1.2rem;
     line-height: 2;
@@ -288,7 +288,7 @@ canvas {
 
 .history {
     position: relative;
-    width: 400vw;
+    width: 200vw;
     background-color: #fff;
     gap: 100px;
 }
@@ -318,7 +318,7 @@ canvas {
 .history .his-wrap {
     position: relative;
     height: 600px;
-    animation: moveHistory 50s linear infinite; /* 애니메이션 기본 설정 */
+    animation: moveHistory 30s linear infinite; /* 애니메이션 기본 설정 */
     animation-play-state: paused; /* 초기 상태에서 정지 */
     padding-left: 1000px;
     display: flex;
@@ -475,7 +475,7 @@ canvas {
     height: 100dvh;
     top: 0;
     box-sizing: border-box;
-    background: #FCFFF5;
+    background: #f4f2f4;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -523,7 +523,7 @@ canvas {
     margin-left: 15px;
 }
 .feature .cont .txt-box .txt {
-    font-family: 'SUIT-Variable';
+    font-family: 'SUIT-variable';
     font-size: min(3vw, 22px);
     line-height: 1.7;
 }
@@ -559,7 +559,7 @@ canvas {
     width: 200vw;
     height: 100dvh;
     min-height: 1330px;
-    background: #eee;
+    background: #FCFFF5;
 }
 
 .font-design .title {
@@ -856,7 +856,7 @@ canvas {
 .cust-wrap .cust-input-txt .team {
     border: none;
     background: none;
-    font-family: 'SUIT-Variable';
+    font-family: 'SUIT-variable';
     font-size: 16px;
     width: 350px;
     text-align: center;
@@ -876,7 +876,7 @@ canvas {
     }
 
 .cust-wrap .cust-sub input {
-    font-family: 'SUIT-Variable';
+    font-family: 'SUIT-variable';
     font-size: 16px;
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
@@ -893,7 +893,7 @@ canvas {
     cursor: pointer;
     background: #292929;
     border: none;
-    font-family: 'SUIT-Variable';
+    font-family: 'SUIT-variable';
     font-weight: 400;
     font-size: 1.2rem;
     color: #fff;
@@ -917,7 +917,7 @@ canvas {
     cursor: pointer;
     border: 1px solid #000;
     background: none;
-    font-family: 'SUIT-Variable';
+    font-family: 'SUIT-variable';
     font-weight: 600;
     display: flex;
     justify-content: center;
@@ -1005,7 +1005,7 @@ canvas {
     position: relative;
     width: 100%;
     text-align: center;
-    font-family: 'SUIT-Variable';
+    font-family: 'SUIT-variable';
     font-weight: 500;
     font-size: 1.8rem;
   }
@@ -1015,7 +1015,7 @@ canvas {
     width: 100%;
     margin-top: 40px;
     text-align: center;
-    font-family: 'SUIT-Variable';
+    font-family: 'SUIT-variable';
     font-size: 1.1rem;
     line-height: 1.7;
     padding-bottom: 200px;

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    @charset "UTF-8";
+
+    @font-face { font-family: "KMA-Light"; font-weight: 400; src: url("../fonts/KMA_Light.woff2") format("woff2"); font-display: swap;}
+
+    @font-face { font-family: "KMA-Regular"; font-weight: 600; src: url("../fonts/KMA_Regular.woff2") format("woff2"); font-display: swap;}
+
+    @font-face { font-family: "KMA-Bold"; font-weight: 800; src: url("../fonts/KMA_Bold.woff2") format("woff2"); font-display: swap;}
+
+    @font-face { font-family: "SUIT-variable"; src: url("../fonts/SUIT-Variable.woff2") format("woff2"); font-display: swap;}
+
+    html, body {padding: 0; margin: 0;}
+
+    .custom-card {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .custom-card .flex1 .title {
+      font-family: 'KMA-Regular';
+      font-size: 40px;
+    }
+
+    .custom-card .flex1 .txt {
+      font-family: 'SUIT-variable';
+    }
+
+    .custom-card .flex2 {
+      width: 490px;
+    }
+    .custom-card .flex2 img{
+      position: absolute;
+      width: 490px;
+    }
+  </style>
+</head>
+<body>
+  <div class="custom-card">
+    <div class="flex flex1">
+      <p class="title">한국능률협회체를 사용한<br>나만의 명함을 만들어보세요! </p>
+      <p class="txt">
+        <span>"서체로 전하는 신뢰, <br>디자인으로 완성하는 차별성." <br><br></span>
+        KMA와 함께 당신의 비즈니스를 특별하게 완성하세요.
+      </p>
+    </div>
+    <div class="flex flex2">
+      <img src="font-images/card_f1.jpg" alt="">
+    </div>
+  </div>
+</body>
+</html>
