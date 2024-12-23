@@ -9,7 +9,7 @@
   <meta property="og:image" content="font-images/og_thumb.jpg">
   <title>한국능률협회체</title>
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" href="css/style.css" as="style" onload="this.rel='stylesheet'">
 
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
@@ -45,7 +45,6 @@
         <span class="txt-dummy dummy-5">래</span>
         <span class="txt-dummy dummy-6">케</span>
         <span class="txt-dummy dummy-7">에</span>
-        <button style="visibility: hidden;">버튼</button>
     </div>
     <!-- //-->
 
@@ -79,23 +78,23 @@
         <div class="his-wrap"> <!-- flow -->
           <div class="img-section">
             <div class="img-box">
-              <img src="font-images/bg_0.webp" alt="" class="his-bg">
-              <img src="font-images/his_logo1_w.webp" alt="" class="his-logo">
+              <img src="font-images/bg_0.webp" alt="" class="his-bg" loading="lazy" width="700" height="345">
+              <img src="font-images/his_logo1_w.webp" alt="" class="his-logo" loading="lazy" width="750" height="162">
             </div>
             <div class="img-box">
-              <img src="font-images/bg_1.webp" alt="" class="his-bg">
+              <img src="font-images/bg_1.webp" alt="" class="his-bg" loading="lazy" width="700" height="485">
             </div>
             <div class="img-box"></div>
             <div class="img-box">
-              <img src="font-images/bg_2.webp" alt="" class="his-bg">
-              <img src="font-images/his_logo2_w.webp" alt="" class="his-logo">
+              <img src="font-images/bg_2.webp" alt="" class="his-bg" loading="lazy" width="700" height="482">
+              <img src="font-images/his_logo2_w.webp" alt="" class="his-logo" loading="lazy" width="591" height="447">
             </div>
             <div class="img-box">
-              <img src="font-images/bg_3.webp" alt="" class="his-bg">
-              <img src="font-images/his_logo3_w.webp" alt="" class="his-logo">
+              <img src="font-images/bg_3.webp" alt="" class="his-bg" loading="lazy" width="700" height="467">
+              <img src="font-images/his_logo3_w.webp" alt="" class="his-logo" loading="lazy" width="533" height="54">
             </div>
             <div class="img-box">
-              <img src="font-images/bg_4.webp" alt="" class="his-bg">
+              <img src="font-images/bg_4.webp" alt="" class="his-bg" loading="lazy" width="700" height="467">
             </div>
           </div>
           <div class="years-section">
@@ -146,7 +145,7 @@
     <div class="feature">
         <div class="cont cont1">
           <div class="cont-box">
-            <video class="video" autoplay muted loop="">
+            <video class="video" poster="video/sample2_poster.webp" preload="none" autoplay muted loop playsinline>
               <source type="video/mp4" src="video/video_sample2.mp4" >
             </video>
           </div>
@@ -162,7 +161,7 @@
         </div>
         <div class="cont cont2">
           <div class="cont-box">
-            <video class="video" autoplay muted loop="">
+            <video class="video" poster="video/sample1_poster.webp" preload="none" autoplay muted loop playsinline>
               <source type="video/mp4" src="video/video_sample1.mp4" >
             </video>
           </div>
@@ -178,7 +177,7 @@
         </div>
         <div class="cont cont3">
           <div class="cont-box">
-            <video class="video" autoplay muted loop="">
+            <video class="video" poster="video/sample2_poster.webp" preload="none" autoplay muted loop playsinline>
               <source type="video/mp4" src="video/video_sample2.mp4" >
             </video>
           </div>
@@ -194,7 +193,7 @@
         </div>
         <div class="cont cont4">
           <div class="cont-box">
-            <video class="video" autoplay muted loop="">
+            <video class="video" poster="video/sample1_poster.webp" preload="none" autoplay muted loop playsinline>
               <source type="video/mp4" src="video/video_sample1.mp4" >
             </video>
           </div>
@@ -226,7 +225,7 @@
               </p>
             </span>
             <span class="content cont2 cont-img hover-paused">
-              <img src="font-images/kma_design1.webp" alt="" loading="lazy" width="1000" height="625">
+              <img src="font-images/kma_design1.webp" alt="" loading="lazy" width="700" height="438">
               <p class="kind">
                 KMA KIT
               </p>
@@ -236,19 +235,19 @@
               <p class="kind">GLOBAL 1st 지식서비스 기관</p>
             </span>
             <span class="content cont4 cont-img hover-paused">
-              <img src="font-images/kma_design2.webp" alt="" loading="lazy" width="1464" height="1000">
+              <img src="font-images/kma_design2.webp" alt="" loading="lazy" width="700" height="478">
               <p class="kind">
                 KMA GOODS
               </p>
               <p class="sub-tit">KMA 펜</p>
             </span>
             <span class="content cont5 cont-img hover-paused">
-              <img src="font-images/kma_design3.webp" alt="" loading="lazy" width="1000" height="1000">
+              <img src="font-images/kma_design3.webp" alt="" loading="lazy" width="700" height="700">
               <p class="kind">KMA GOODS</p>
               <p class="sub-tit">KMA USB</p>
             </span>
             <span class="content cont6 cont-img hover-paused">
-              <img src="font-images/kma_design4.webp" alt="" loading="lazy" width="1864" height="1044">
+              <img src="font-images/kma_design4.webp" alt="" loading="lazy" width="1000" height="560">
               <p class="kind">KMA 크터뷰</p>
               <p class="sub-tit">
                 <span>크마 TV</span>
@@ -264,7 +263,7 @@
               </p>
             </span>
             <span class="content cont2 cont-img hover-paused">
-              <img src="font-images/kma_design1.webp" alt="" loading="lazy" width="1000" height="625">
+              <img src="font-images/kma_design1.webp" alt="" loading="lazy" width="700" height="438">
               <p class="kind">
                 KMA KIT
               </p>
@@ -274,57 +273,19 @@
               <p class="kind">GLOBAL 1st 지식서비스 기관</p>
             </span>
             <span class="content cont4 cont-img hover-paused">
-              <img src="font-images/kma_design2.webp" alt="" loading="lazy" width="1464" height="1000">
+              <img src="font-images/kma_design2.webp" alt="" loading="lazy" width="700" height="478">
               <p class="kind">
                 KMA GOODS
               </p>
               <p class="sub-tit">KMA 펜</p>
             </span>
             <span class="content cont5 cont-img hover-paused">
-              <img src="font-images/kma_design3.webp" alt="" loading="lazy" width="1000" height="1000">
+              <img src="font-images/kma_design3.webp" alt="" loading="lazy" width="700" height="700">
               <p class="kind">KMA GOODS</p>
               <p class="sub-tit">KMA USB</p>
             </span>
             <span class="content cont6 cont-img hover-paused">
-              <img src="font-images/kma_design4.webp" alt="" loading="lazy" width="1864" height="1044">
-              <p class="kind">KMA 크터뷰</p>
-              <p class="sub-tit">
-                <span>크마 TV</span>
-                <span>크터뷰 : 크마 임직원 인터뷰</span>
-              </p>
-              <a href="https://www.youtube.com/playlist?list=PLfYWPKSwpaSs-D9PI7t8Y4Un8oYMWw6UB" target="_blank" class="link">보러가기</a>
-            </span>
-            
-            <span class="content cont1 hover-paused">
-              <p class="kind">
-                KMA 
-                <span>한국능률협회체 <br>활용 사례 살펴보기</span>
-              </p>
-            </span>
-            <span class="content cont2 cont-img hover-paused">
-              <img src="font-images/kma_design1.webp" alt="" loading="lazy" width="1000" height="625">
-              <p class="kind">
-                KMA KIT
-              </p>
-              <p class="sub-tit">2025 웰컴키트</p>
-            </span>
-            <span class="content cont3">
-              <p class="kind">GLOBAL 1st 지식서비스 기관</p>
-            </span>
-            <span class="content cont4 cont-img hover-paused">
-              <img src="font-images/kma_design2.webp" alt="" loading="lazy" width="1464" height="1000">
-              <p class="kind">
-                KMA GOODS
-              </p>
-              <p class="sub-tit">KMA 펜</p>
-            </span>
-            <span class="content cont5 cont-img hover-paused">
-              <img src="font-images/kma_design3.webp" alt="" loading="lazy" width="1000" height="1000">
-              <p class="kind">KMA GOODS</p>
-              <p class="sub-tit">KMA USB</p>
-            </span>
-            <span class="content cont6 cont-img hover-paused">
-              <img src="font-images/kma_design4.webp" alt="" loading="lazy" width="1864" height="1044">
+              <img src="font-images/kma_design4.webp" alt="" loading="lazy" width="1000" height="560">
               <p class="kind">KMA 크터뷰</p>
               <p class="sub-tit">
                 <span>크마 TV</span>
@@ -340,7 +301,7 @@
               </p>
             </span>
             <span class="content cont2 cont-img hover-paused">
-              <img src="font-images/kma_design1.webp" alt="" loading="lazy" width="1000" height="625">
+              <img src="font-images/kma_design1.webp" alt="" loading="lazy" width="700" height="438">
               <p class="kind">
                 KMA KIT
               </p>
@@ -350,19 +311,57 @@
               <p class="kind">GLOBAL 1st 지식서비스 기관</p>
             </span>
             <span class="content cont4 cont-img hover-paused">
-              <img src="font-images/kma_design2.webp" alt="" loading="lazy" width="1464" height="1000">
+              <img src="font-images/kma_design2.webp" alt="" loading="lazy" width="700" height="478">
               <p class="kind">
                 KMA GOODS
               </p>
               <p class="sub-tit">KMA 펜</p>
             </span>
             <span class="content cont5 cont-img hover-paused">
-              <img src="font-images/kma_design3.webp" alt="" loading="lazy" width="1000" height="1000">
+              <img src="font-images/kma_design3.webp" alt="" loading="lazy" width="700" height="700">
               <p class="kind">KMA GOODS</p>
               <p class="sub-tit">KMA USB</p>
             </span>
             <span class="content cont6 cont-img hover-paused">
-              <img src="font-images/kma_design4.webp" alt="" loading="lazy" width="1864" height="1044">
+              <img src="font-images/kma_design4.webp" alt="" loading="lazy" width="1000" height="560">
+              <p class="kind">KMA 크터뷰</p>
+              <p class="sub-tit">
+                <span>크마 TV</span>
+                <span>크터뷰 : 크마 임직원 인터뷰</span>
+              </p>
+              <a href="https://www.youtube.com/playlist?list=PLfYWPKSwpaSs-D9PI7t8Y4Un8oYMWw6UB" target="_blank" class="link">보러가기</a>
+            </span>
+
+            <span class="content cont1 hover-paused">
+              <p class="kind">
+                KMA 
+                <span>한국능률협회체 <br>활용 사례 살펴보기</span>
+              </p>
+            </span>
+            <span class="content cont2 cont-img hover-paused">
+              <img src="font-images/kma_design1.webp" alt="" loading="lazy" width="700" height="438">
+              <p class="kind">
+                KMA KIT
+              </p>
+              <p class="sub-tit">2025 웰컴키트</p>
+            </span>
+            <span class="content cont3">
+              <p class="kind">GLOBAL 1st 지식서비스 기관</p>
+            </span>
+            <span class="content cont4 cont-img hover-paused">
+              <img src="font-images/kma_design2.webp" alt="" loading="lazy" width="700" height="478">
+              <p class="kind">
+                KMA GOODS
+              </p>
+              <p class="sub-tit">KMA 펜</p>
+            </span>
+            <span class="content cont5 cont-img hover-paused">
+              <img src="font-images/kma_design3.webp" alt="" loading="lazy" width="700" height="700">
+              <p class="kind">KMA GOODS</p>
+              <p class="sub-tit">KMA USB</p>
+            </span>
+            <span class="content cont6 cont-img hover-paused">
+              <img src="font-images/kma_design4.webp" alt="" loading="lazy" width="1000" height="560">
               <p class="kind">KMA 크터뷰</p>
               <p class="sub-tit">
                 <span>크마 TV</span>

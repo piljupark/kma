@@ -361,6 +361,7 @@ canvas {
 .history .his-wrap .img-section .img-box img.his-logo {
     position: absolute;
     width: 90%;
+    height: auto;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
