@@ -17,6 +17,7 @@
     @font-face { font-family: "SUIT-variable"; src: url("../fonts/SUIT-Variable.woff2") format("woff2"); font-display: swap;}
 
     html, body {padding: 0; margin: 0;}
+    a, p, h1, h2, h3, button {padding: 0; margin: 0;}
 
     .custom-card {
       position: relative;
@@ -31,6 +32,13 @@
 
     .custom-card .flex1 .txt {
       font-family: 'SUIT-variable';
+      margin-top: 40px;
+    }
+
+    .custom-card .flex1 .txt span {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.7;
     }
 
     .custom-card .flex2 {
@@ -39,6 +47,10 @@
     .custom-card .flex2 img{
       position: absolute;
       width: 490px;
+    }
+
+    .custom-card .flex2 #cust-form {
+      position: relative;
     }
   </style>
 </head>
@@ -53,6 +65,24 @@
     </div>
     <div class="flex flex2">
       <img src="font-images/card_f1.jpg" alt="">
+      <form id="cust-form">
+    
+          
+          
+            <div class="cust-input-txt">
+              <input type="text" placeholder="김능률" class="kor-name" id="nameInut" autocomplete="off"> 
+              <input type="text" placeholder="Neungryul, Kim" class="eng-name" id="engName" autocomplete="off"> 
+              <input type="text" placeholder="공공혁신그룹 지속가능경영센터 센터장" class="team" id="engName" autocomplete="off"> 
+
+              <div class="cust-sub">
+                <input type="text" class="company" placeholder="02.1234.5678" autocomplete="off">
+                <input type="text" class="tel" placeholder="010.2222.0000" autocomplete="off">
+                <input type="text" class="email" placeholder="kma@kma.or.kr" autocomplete="off">
+              </div>
+            </div>
+
+          <input type="reset" class="resetBtn" value="다시 작성하기">
+      </form>
     </div>
   </div>
 </body>
