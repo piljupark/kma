@@ -6,7 +6,7 @@
 
 @font-face { font-family: "KMA-Bold"; font-weight: 800; src: url("../fonts/KMA_Bold.woff2") format("woff2"); font-display: swap;}
 
-@font-face { font-family: "SUIT-variable"; src: url("../fonts/SUIT-Variable.woff2") format("woff2"); font-display: swap;}
+@font-face { font-family: "SUIT-variable"; src: url("../fonts/SUIT-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: swap;}
 
 * { margin: 0; padding: 0; border: none; background: none; }
 
@@ -535,14 +535,40 @@ canvas {
     }
     .feature .cont .cont-box {
         width: 50%;
+        min-width: 500px;
+        padding-top: max(500px, 50%)
+    }
+    .feature .cont .txt-box {
+        min-width: 500px;
+    }
+    .feature .cont .txt-box .title {
+        font-size: 30px;
+    }
+
+    .feature .cont .txt-box .txt {
+        font-size: 18px;
+    }
+    .feature .cont .txt-box .txt br.pc-only {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .feature .cont .cont-box {
+        width: 50%;
         min-width: 300px;
         padding-top: max(300px, 50%)
     }
     .feature .cont .txt-box {
-        min-width: 300px;
+        max-width: 300px;
+        min-width: unset;
     }
     .feature .cont .txt-box .title {
         font-size: 20px;
+    }
+
+    .feature .cont .txt-box .txt {
+        font-size: 14px;
     }
 }
 /* //feature */
@@ -775,6 +801,12 @@ canvas {
     box-sizing: border-box;
     left: 0px;
     right: unset;
+  }
+
+  @media screen and (max-width: 1080px) {
+    .font-design .title {
+        font-size: 3rem;
+    }
   }
 /* //font-design */
 
