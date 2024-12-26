@@ -490,7 +490,7 @@ canvas {
     max-width: 500px;
     padding-top: min(500px, 32.25%);
     background: #eee;
-    border-radius: 10px;
+    border-radius: 30px;
     overflow: hidden;
 }
 .feature .cont .cont-box video {
@@ -782,157 +782,140 @@ canvas {
 .custom-card {
     position: relative;
     width: 100%;
-}
-
-.custom-card .cust-title {
-    font-family: 'KMA-Bold';
-    font-size: 3rem;
-    text-align: center;
-    width: 100%;
-    margin-top: 200px;
-    margin-bottom: 100px;
-}
-
-.cust-wrap {
-    position: relative;
-    width: 100%;
+    max-width: 1080px;
+    min-height: 1080px;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    display: grid;
-}
-.cust-wrap .cust-card {
+  }
+  .custom-card .flex1 .title {
     position: relative;
-    height: auto;
+    font-family: 'KMA-Regular';
+    font-size: 40px;
+  }
+  .custom-card .flex1 .title:after {
+    position: absolute;
+    content: '';
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #0000a3;
+    bottom: 11px;
+    margin-left: 15px;
+  }
+
+  .custom-card .flex1 .txt {
+    font-family: 'SUIT-variable';
+    margin-top: 40px;
+  }
+
+  .custom-card .flex1 .txt span {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.7;
+  }
+
+  .custom-card .flex1 .btn-wrap {
+    position: relative;
     display: flex;
-    gap: 10px;
-}
+    justify-content: space-between;
+    margin-top: 100px;
+  }
 
-.cust-wrap .cust-card .card-bg{
+  .custom-card .flex1 .btn-wrap .btn {
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    border: 1px solid #707070;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .custom-card .flex1 .btn-wrap .btn.btn2 {
+    background: #000;
+  }
+  .custom-card .flex1 .btn-wrap .btn.btn3 {
+    background: #433189;
+  }
+  .custom-card .flex1 .btn-wrap .btn.btn4 {
+    background: #FF5454;
+  }
+  .custom-card .flex1 .download {
+    width: 100%;
+    margin-top: 40px;
+    height: 60px;
+    font-family: 'KMA-Regular';
+    font-size: 20px;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    background: #000;
+    cursor: pointer;
+  }
+
+
+
+  .custom-card .flex2 {
     width: 350px;
-}
-
-
-.cust-wrap .cust-card .card-back {
-    position: relative;
-}
-
-.cust-wrap .cust-input-txt {
+    height: 558px;
+  }
+  .custom-card .flex2 img{
     position: absolute;
     width: 350px;
-    height: 567px;
-    left: 0;
-    top: 0;
-    display: grid;
-    box-sizing: border-box;
-    align-items: flex-end;
-    justify-content: flex-start;
-    align-content: flex-end;
-}
+  }
 
-.cust-wrap input {
+  .custom-card .flex2 #cust-form {
+    position: relative;
+    height: 558px;
+  }
+
+  .custom-card .flex2 #cust-form input {
+    border: none;
+    background: none;
+    font-family: 'KMA-Regular';
     outline: none;
-}
+    color: #000;
+    font-size: 18px;
+  }
+  .custom-card .flex2 #cust-form input:focus {
+    outline: none;
+  }
 
-.cust-wrap .cust-input-txt .kor-name {
-    border: none;
-    background: none;
-    font-family: 'KMA-Regular';
-    font-size: 25px;
-    width: 350px;
-    text-align: center;
-    letter-spacing: 10px;
-}
-.cust-wrap .cust-input-txt .eng-name {
-    border: none;
-    background: none;
-    font-family: 'KMA-Regular';
-    font-size: 14px;
-    width: 350px;
-    text-align: center;
-    letter-spacing: 1.5px;
-    margin-top: 10px;
-}
-
-.cust-wrap .cust-input-txt .team {
-    border: none;
-    background: none;
-    font-family: 'SUIT-variable';
-    font-size: 16px;
-    width: 350px;
-    text-align: center;
-    margin: 40px 0 35px;
-    letter-spacing: -1px;
-}
-
-.cust-wrap .cust-sub {
-    width: 350px;
-    height: 175px;
+  .custom-card .flex2 #cust-form .cust-input-txt {
     display: grid;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
-    gap: 20px;
-    }
+    align-content: flex-end;
+    height: 100%;
+    padding: 40px 40px 0;
+    box-sizing: border-box;
+  }
 
-.cust-wrap .cust-sub input {
-    font-family: 'SUIT-variable';
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.7);
-    text-align: center;
-    background: none;
-    border: none;
-}
+  .custom-card .flex2 #cust-form .cust-input-txt .kor-name {
+    margin-bottom: 15px;
+    font-family: 'KMA-Bold';
+    font-size: 40px;
+    letter-spacing: 8px;
+  }
+
+  .custom-card .flex2 #cust-form .cust-input-txt .team {
+    margin-bottom: 20px;
+  }
 
 
-.downloadBtn {
-    width: 200px;
-    height: 60px;
-    margin: 20px auto 0;
-    padding: 10px 20px;
-    cursor: pointer;
-    background: #292929;
-    border: none;
-    font-family: 'SUIT-variable';
-    font-weight: 400;
-    font-size: 1.2rem;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .custom-card .flex2 #cust-form .cust-sub {
+    display: grid;
+    align-content: end;
     gap: 10px;
-}
+    height: 160px;
+    padding-bottom: 30px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
 
-.downloadBtn img {
-    width: 11px;
-    filter: invert(1);
-}
-
-.resetBtn {
-    width: 200px;
-    height: 60px;
-    margin: 20px auto 0;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    border: 1px solid #000;
-    background: none;
-    font-family: 'SUIT-variable';
-    font-weight: 600;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@media ( max-width: 1080px ) {
-    .custom .cust-title {
-        font-size: 4vw;
-    }
-    .cust-wrap .cust-card img{
-        width: 250px;
-    }
-}
+  .custom-card .flex2 #cust-form .cust-sub input {
+    font-family: 'KMA-Light';
+    color: #fff;
+    font-size: 16px;
+  }
 /* //custom-card */
 
 /* download */

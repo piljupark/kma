@@ -22,12 +22,25 @@
     .custom-card {
       position: relative;
       width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
     }
     .custom-card .flex1 .title {
+      position: relative;
       font-family: 'KMA-Regular';
       font-size: 40px;
+    }
+    .custom-card .flex1 .title:after {
+      position: absolute;
+      content: '';
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: #0000a3;
+      bottom: 11px;
+      margin-left: 15px;
     }
 
     .custom-card .flex1 .txt {
@@ -41,16 +54,105 @@
       line-height: 1.7;
     }
 
+    .custom-card .flex1 .btn-wrap {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 100px;
+    }
+
+    .custom-card .flex1 .btn-wrap .btn {
+      width: 80px;
+      height: 80px;
+      background: #fff;
+      border: 1px solid #707070;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .custom-card .flex1 .btn-wrap .btn.btn2 {
+      background: #000;
+    }
+    .custom-card .flex1 .btn-wrap .btn.btn3 {
+      background: #433189;
+    }
+    .custom-card .flex1 .btn-wrap .btn.btn4 {
+      background: #FF5454;
+    }
+    .custom-card .flex1 .download {
+      width: 100%;
+      margin-top: 40px;
+      height: 60px;
+      font-family: 'KMA-Regular';
+      font-size: 20px;
+      color: #fff;
+      border-radius: 10px;
+      border: none;
+      background: #000;
+      cursor: pointer;
+    }
+
+
+
     .custom-card .flex2 {
-      width: 490px;
+      width: 350px;
+      height: 558px;
     }
     .custom-card .flex2 img{
       position: absolute;
-      width: 490px;
+      width: 350px;
     }
 
     .custom-card .flex2 #cust-form {
       position: relative;
+      height: 558px;
+    }
+
+    .custom-card .flex2 #cust-form input {
+      border: none;
+      background: none;
+      font-family: 'KMA-Regular';
+      outline: none;
+      color: #000;
+      font-size: 18px;
+    }
+    .custom-card .flex2 #cust-form input:focus {
+      outline: none;
+    }
+
+    .custom-card .flex2 #cust-form .cust-input-txt {
+      display: grid;
+      align-content: flex-end;
+      height: 100%;
+      padding: 40px 40px 0;
+      box-sizing: border-box;
+    }
+
+    .custom-card .flex2 #cust-form .cust-input-txt .kor-name {
+      margin-bottom: 15px;
+      font-family: 'KMA-Bold';
+      font-size: 40px;
+      letter-spacing: 8px;
+    }
+
+    .custom-card .flex2 #cust-form .cust-input-txt .team {
+      margin-bottom: 20px;
+    }
+
+
+    .custom-card .flex2 #cust-form .cust-sub {
+      display: grid;
+      align-content: end;
+      gap: 10px;
+      height: 160px;
+      padding-bottom: 30px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    .custom-card .flex2 #cust-form .cust-sub input {
+      font-family: 'KMA-Light';
+      color: #fff;
+      font-size: 16px;
     }
   </style>
 </head>
@@ -62,28 +164,169 @@
         <span>"서체로 전하는 신뢰, <br>디자인으로 완성하는 차별성." <br><br></span>
         KMA와 함께 당신의 비즈니스를 특별하게 완성하세요.
       </p>
+
+      <div class="btn-wrap">
+        <button class="btn btn1"></button>
+        <button class="btn btn2"></button>
+        <button class="btn btn3"></button>
+        <button class="btn btn4"></button>
+      </div>
+      <button id="downloadBtn" class="download">다운로드 하기</button>
     </div>
     <div class="flex flex2">
       <img src="font-images/card_f1.jpg" alt="">
+      <img src="font-images/card_f2.jpg" alt="">
+      <img src="font-images/card_f3.jpg" alt="">
+      <img src="font-images/card_f4.jpg" alt="">
       <form id="cust-form">
-    
-          
-          
-            <div class="cust-input-txt">
-              <input type="text" placeholder="김능률" class="kor-name" id="nameInut" autocomplete="off"> 
-              <input type="text" placeholder="Neungryul, Kim" class="eng-name" id="engName" autocomplete="off"> 
-              <input type="text" placeholder="공공혁신그룹 지속가능경영센터 센터장" class="team" id="engName" autocomplete="off"> 
+        <div class="cust-input-txt">
+          <input type="text" placeholder="김크마" class="kor-name" id="nameInput" autocomplete="off"> 
+          <input type="text" placeholder="한국능률협회" class="company" id="team" autocomplete="off"> 
+          <input type="text" placeholder="마케팅팀" class="team" id="team" autocomplete="off"> 
 
-              <div class="cust-sub">
-                <input type="text" class="company" placeholder="02.1234.5678" autocomplete="off">
-                <input type="text" class="tel" placeholder="010.2222.0000" autocomplete="off">
-                <input type="text" class="email" placeholder="kma@kma.or.kr" autocomplete="off">
-              </div>
-            </div>
+          <div class="cust-sub">
+            <input type="text" class="tel" placeholder="010.2222.0000" autocomplete="off">
+            <input type="text" class="tel2" placeholder="02.1234.5678" autocomplete="off">
+            <input type="text" class="email" placeholder="kma@kma.or.kr" autocomplete="off">
+          </div>
+        </div>
 
-          <input type="reset" class="resetBtn" value="다시 작성하기">
+        <input type="reset" class="resetBtn" value="다시 작성하기" style="display: none;">
       </form>
     </div>
   </div>
+
+  <script> //명함 다운로드
+    document.addEventListener("DOMContentLoaded", () => {
+      const buttons = document.querySelectorAll(".btn-wrap .btn");
+      const images = document.querySelectorAll(".flex2 img");
+      const custInputTxtInputs = document.querySelectorAll(".cust-input-txt input");
+      const custSubInputs = document.querySelectorAll(".cust-sub input");
+      const downloadBtn = document.getElementById("downloadBtn");
+  
+      let currentImageIndex = 0;
+      let currentColors = { 
+        korNameColor: "#000", 
+        companyColor: "#000", 
+        teamColor: "#000", 
+        subColor: "#fff" 
+      }; // 초기 색상 설정
+  
+      // 이미지 표시 함수
+      function showImage(index) {
+        images.forEach((img) => {
+          img.style.display = "none";
+        });
+        if (images[index]) {
+          images[index].style.display = "block";
+          currentImageIndex = index;
+        }
+      }
+  
+      // 텍스트 색상 변경 함수
+      function changeColors(korNameColor, companyColor, teamColor, subColor) {
+        custInputTxtInputs.forEach(input => {
+          if (input.classList.contains("kor-name")) {
+            input.style.color = korNameColor;
+          } else if (input.classList.contains("company")) {
+            input.style.color = companyColor;
+          } else if (input.classList.contains("team")) {
+            input.style.color = teamColor;
+          }
+        });
+        custSubInputs.forEach(input => (input.style.color = subColor));
+        currentColors = { korNameColor, companyColor, teamColor, subColor }; // 현재 색상 저장
+      }
+  
+      // 버튼 클릭 이벤트 추가
+      buttons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+          showImage(index);
+          if (index === 0) {
+            changeColors("#000", "#000", "#000", "#fff");
+          } else if (index === 1) {
+            changeColors("#fff", "#fff", "#fff", "#fff");
+          } else if (index === 2) {
+            changeColors("#fff", "#fff", "#fff", "#433189");
+          } else if (index === 3) {
+            changeColors("#fff", "#fff", "#fff", "#fff");
+          }
+        });
+      });
+  
+      // 다운로드 버튼 이벤트
+      downloadBtn.addEventListener("click", () => {
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+        const currentImage = images[currentImageIndex];
+        const targetWidth = 600;
+        const aspectRatio = currentImage.naturalHeight / currentImage.naturalWidth;
+        const targetHeight = targetWidth * aspectRatio;
+  
+        // 캔버스 크기 설정
+        canvas.width = targetWidth;
+        canvas.height = targetHeight;
+  
+        // 현재 이미지 캔버스에 그리기
+        ctx.drawImage(currentImage, 0, 0, targetWidth, targetHeight);
+  
+        // 텍스트 추가
+        const padding = 60;
+        const bottomMargin = 70;
+        const telGap = 160;
+        const korNameLetterSpacing = 20; // `kor-name`의 letter-spacing 값 (픽셀 단위)
+        let currentY = targetHeight - bottomMargin;
+  
+        Array.from(custInputTxtInputs).reverse().forEach((input) => {
+          if (input.value.trim() !== "") {
+            const isKorName = input.classList.contains("kor-name");
+            const isCompany = input.classList.contains("company");
+            const isTeam = input.classList.contains("team");
+            const isTel = input.classList.contains("tel");
+            const fontSize = isKorName ? 70 : 30;
+            const lineGap = isKorName ? 40 : 20;
+  
+            ctx.font = `${fontSize}px ${window.getComputedStyle(input).fontFamily}`;
+            ctx.fillStyle = isKorName
+              ? currentColors.korNameColor
+              : isCompany
+              ? currentColors.companyColor
+              : isTeam
+              ? currentColors.teamColor
+              : currentColors.subColor; // 클래스에 따른 색상 적용
+            ctx.textBaseline = "bottom";
+  
+            if (isKorName) {
+              // `kor-name` 텍스트를 하나씩 그리면서 letter-spacing 적용
+              const chars = input.value.split("");
+              let x = padding;
+              chars.forEach((char) => {
+                ctx.fillText(char, x, currentY);
+                x += ctx.measureText(char).width + korNameLetterSpacing;
+              });
+            } else {
+              ctx.fillText(input.value, padding, currentY);
+            }
+  
+            if (isTel) {
+              currentY -= telGap;
+            } else {
+              currentY -= fontSize + lineGap;
+            }
+          }
+        });
+  
+        // 캔버스를 이미지로 변환하여 다운로드
+        const link = document.createElement("a");
+        link.href = canvas.toDataURL("image/png");
+        link.download = "custom_card.png";
+        link.click();
+      });
+  
+      // 초기 설정
+      showImage(0);
+      changeColors("#000", "#000", "#000", "#fff");
+    });
+  </script>
 </body>
 </html>

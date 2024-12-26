@@ -1,65 +1,131 @@
-const downloadButton = document.querySelector('.downloadBtn');
-  downloadButton.addEventListener('click', () => {
-    const frontDiv = document.querySelector('.cust-card > div:nth-child(1)');
+//명함 다운로드
+    document.addEventListener("DOMContentLoaded", () => {
+      const buttons = document.querySelectorAll(".btn-wrap .btn");
+      const images = document.querySelectorAll(".flex2 img");
+      const custInputTxtInputs = document.querySelectorAll(".cust-input-txt input");
+      const custSubInputs = document.querySelectorAll(".cust-sub input");
+      const downloadBtn = document.getElementById("downloadBtn");
   
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
+      let currentImageIndex = 0;
+      let currentColors = { 
+        korNameColor: "#000", 
+        companyColor: "#000", 
+        teamColor: "#000", 
+        subColor: "#fff" 
+      }; // 초기 색상 설정
   
-    const cardWidth = 468; // Fixed width for the card
-    const cardHeight = 752; // Fixed height for the card
-    canvas.width = cardWidth; // Single card width
-    canvas.height = cardHeight;
-  
-    const frontImage = frontDiv.querySelector('img'); // card_f 이미지
-  
-    const frontImageElement = new Image();
-    frontImageElement.src = frontImage.src;
-  
-    frontImageElement.onload = () => {
-      ctx.drawImage(frontImageElement, 0, 0, cardWidth, cardHeight);
-  
-      const korName = document.querySelector('#nameInut').value;
-      const engName = document.querySelector('#engName').value;
-      const team = document.querySelector('#engName.team').value;
-      const company = document.querySelector('.company').value;
-      const tel = document.querySelector('.tel').value;
-      const email = document.querySelector('.email').value;
-  
-      function drawTextWithLetterSpacing(ctx, text, x, y, letterSpacing) {
-        const characters = text.split('');
-        const textWidth = characters.reduce((acc, char) => acc + ctx.measureText(char).width + letterSpacing, -letterSpacing);
-        let currentPosition = x - (textWidth / 2);
-  
-        characters.forEach(char => {
-          ctx.fillText(char, currentPosition, y);
-          currentPosition += ctx.measureText(char).width + letterSpacing;
+      // 이미지 표시 함수
+      function showImage(index) {
+        images.forEach((img) => {
+          img.style.display = "none";
         });
+        if (images[index]) {
+          images[index].style.display = "block";
+          currentImageIndex = index;
+        }
       }
   
-      ctx.font = "30px 'KMA-Regular'";
-      ctx.fillStyle = "#000";
-      ctx.textAlign = 'center';
+      // 텍스트 색상 변경 함수
+      function changeColors(korNameColor, companyColor, teamColor, subColor) {
+        custInputTxtInputs.forEach(input => {
+          if (input.classList.contains("kor-name")) {
+            input.style.color = korNameColor;
+          } else if (input.classList.contains("company")) {
+            input.style.color = companyColor;
+          } else if (input.classList.contains("team")) {
+            input.style.color = teamColor;
+          }
+        });
+        custSubInputs.forEach(input => (input.style.color = subColor));
+        currentColors = { korNameColor, companyColor, teamColor, subColor }; // 현재 색상 저장
+      }
   
-      drawTextWithLetterSpacing(ctx, korName, cardWidth / 1.89, canvas.height - 400, 10);
+      // 버튼 클릭 이벤트 추가
+      buttons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+          showImage(index);
+          if (index === 0) {
+            changeColors("#000", "#000", "#000", "#fff");
+          } else if (index === 1) {
+            changeColors("#fff", "#fff", "#fff", "#fff");
+          } else if (index === 2) {
+            changeColors("#fff", "#fff", "#fff", "#433189");
+          } else if (index === 3) {
+            changeColors("#fff", "#fff", "#fff", "#fff");
+          }
+        });
+      });
   
-      ctx.font = "16px 'KMA-Light'";
-      ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
-      ctx.fillText(engName, cardWidth / 2, canvas.height - 360);
-      ctx.font = "16px 'SUIT-variable'";
-      ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
-      drawTextWithLetterSpacing(ctx, team, cardWidth / 1.965, canvas.height - 280, -1);
+      // 다운로드 버튼 이벤트
+      downloadBtn.addEventListener("click", () => {
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+        const currentImage = images[currentImageIndex];
+        const targetWidth = 600;
+        const aspectRatio = currentImage.naturalHeight / currentImage.naturalWidth;
+        const targetHeight = targetWidth * aspectRatio;
   
-      // Draw additional details (company, tel, email)
-      ctx.font = "300 18px 'SUIT-variable'";
-      ctx.fillStyle = "rgba(255, 255, 255, 0.7)";
-      ctx.fillText(company, cardWidth / 2, canvas.height - 150);
-      ctx.fillText(tel, cardWidth / 2, canvas.height - 110);
-      ctx.fillText(email, cardWidth / 2, canvas.height - 70);
+        // 캔버스 크기 설정
+        canvas.width = targetWidth;
+        canvas.height = targetHeight;
   
-      // Save the canvas as an image
-      const link = document.createElement('a');
-      link.download = 'business_card.png';
-      link.href = canvas.toDataURL();
-      link.click();
-    };
-  });
+        // 현재 이미지 캔버스에 그리기
+        ctx.drawImage(currentImage, 0, 0, targetWidth, targetHeight);
+  
+        // 텍스트 추가
+        const padding = 60;
+        const bottomMargin = 70;
+        const telGap = 160;
+        const korNameLetterSpacing = 20; // `kor-name`의 letter-spacing 값 (픽셀 단위)
+        let currentY = targetHeight - bottomMargin;
+  
+        Array.from(custInputTxtInputs).reverse().forEach((input) => {
+          if (input.value.trim() !== "") {
+            const isKorName = input.classList.contains("kor-name");
+            const isCompany = input.classList.contains("company");
+            const isTeam = input.classList.contains("team");
+            const isTel = input.classList.contains("tel");
+            const fontSize = isKorName ? 70 : 30;
+            const lineGap = isKorName ? 40 : 20;
+  
+            ctx.font = `${fontSize}px ${window.getComputedStyle(input).fontFamily}`;
+            ctx.fillStyle = isKorName
+              ? currentColors.korNameColor
+              : isCompany
+              ? currentColors.companyColor
+              : isTeam
+              ? currentColors.teamColor
+              : currentColors.subColor; // 클래스에 따른 색상 적용
+            ctx.textBaseline = "bottom";
+  
+            if (isKorName) {
+              // `kor-name` 텍스트를 하나씩 그리면서 letter-spacing 적용
+              const chars = input.value.split("");
+              let x = padding;
+              chars.forEach((char) => {
+                ctx.fillText(char, x, currentY);
+                x += ctx.measureText(char).width + korNameLetterSpacing;
+              });
+            } else {
+              ctx.fillText(input.value, padding, currentY);
+            }
+  
+            if (isTel) {
+              currentY -= telGap;
+            } else {
+              currentY -= fontSize + lineGap;
+            }
+          }
+        });
+  
+        // 캔버스를 이미지로 변환하여 다운로드
+        const link = document.createElement("a");
+        link.href = canvas.toDataURL("image/png");
+        link.download = "custom_card.png";
+        link.click();
+      });
+  
+      // 초기 설정
+      showImage(0);
+      changeColors("#000", "#000", "#000", "#fff");
+    });
