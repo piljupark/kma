@@ -343,6 +343,7 @@ canvas {
 .history .his-wrap .img-section .img-box {
     position: relative;
     width: 250px;
+    min-width: 250px;
     height: 200px;
     border-radius: 10px;
     transition: .2s;
@@ -447,6 +448,13 @@ canvas {
 }
 
 @media screen and (max-width: 1080px) {
+    .history {
+      width: 550vw;
+    }
+    .history .his-wrap {
+      padding-left: 0;
+      animation: moveHistory 20s linear infinite;
+    }
     .his-title {
         font-size: max(3.8vw, 24px);
     }
@@ -540,6 +548,7 @@ canvas {
     }
     .feature .cont .txt-box {
         min-width: 500px;
+        gap: 40px;
     }
     .feature .cont .txt-box .title {
         font-size: 30px;
@@ -562,9 +571,16 @@ canvas {
     .feature .cont .txt-box {
         max-width: 300px;
         min-width: unset;
+        gap: 25px;
     }
     .feature .cont .txt-box .title {
         font-size: 20px;
+    }
+    .feature .cont .txt-box .title:after {
+      width: 6px;
+      height: 6px;
+      bottom: 7px;
+      margin-left: 5px;
     }
 
     .feature .cont .txt-box .txt {
