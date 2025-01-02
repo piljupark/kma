@@ -206,6 +206,8 @@ canvas {
     border-top: 1px solid #999;
     border-bottom: 1px solid #999;
     background: #fff;
+    opacity: .1;
+    border: none;
 }
 .int .swiper-slide.light {
     font-family: 'KMA-Light';
@@ -226,14 +228,7 @@ canvas {
     color: #000;
     opacity: 1;
 }
-.int .swiper-slide-prev {
-    border-bottom: none;
-    opacity: .1;
-}
-.int .swiper-slide-next {
-    border-top: none;
-    opacity: .1;
-}
+
 
 .int .int-simple {
     font-family: 'SUIT-variable';
@@ -467,13 +462,25 @@ canvas {
         bottom: 9%;
         margin-left: 2%;
     }
+    .history .his-wrap .years-section {
+      margin-top: 100px;
+    }
+    .history .his-wrap .years-section .years-txt {
+      font-size: 1.6rem;
+    }
+    .history .his-wrap .years-section .years-txt:nth-child(1):after, .history .his-wrap .years-section .years-txt:nth-child(2):after, .history .his-wrap .years-section .years-txt:nth-child(4):after, .history .his-wrap .years-section .years-txt:nth-child(5):after, .history .his-wrap .years-section .years-txt:nth-child(6):after {
+      height: 180px;
+    }
+    .history .his-wrap .txt-section .txt {
+      font-size: 16px;
+    }
 }
 /* //history */
 
 .feature {
     position: relative;
     width: 100%;
-    height: 400dvh;
+    height: 300dvh;
     background: #666;
 }
 
@@ -491,6 +498,18 @@ canvas {
     gap: 5.5%;
     z-index: 10;
 }
+.feature .cont1 {
+  background: #e5eaf9;
+}
+.feature .cont2 {
+  background: #d1dbfa;
+}
+.feature .cont3 {
+  background: #c6d2fa;
+}
+/* .feature .cont4 {
+  background: #ced9ff;
+} */
 
 .feature .cont .cont-box {
     position: relative;
@@ -833,9 +852,11 @@ canvas {
     max-width: 1080px;
     min-height: 1080px;
     margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-sizing: border-box;
   }
   .custom-card .flex1 .title {
     position: relative;
@@ -971,6 +992,8 @@ canvas {
     position: relative;
     width: 100%;
     height: auto;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .download .title {
@@ -1052,3 +1075,10 @@ canvas {
     line-height: 1.7;
     padding-bottom: 200px;
   }
+
+  @media screen and (max-width: 1080px) {
+    .download .code-snippet-wrap {
+      flex-direction: column;
+      align-items: center;
+    }
+  } 
