@@ -29,7 +29,7 @@ canvas {
 .font-main {
     position: relative;
     width: 100%;
-    height: 100dvh;
+    height: 100vh;
     padding: 300px 0 200px;
     box-sizing: border-box;
     overflow: hidden;
@@ -488,7 +488,7 @@ canvas {
     position: -webkit-sticky;
     position: sticky;
     width: 100%;
-    height: 100dvh;
+    height: 100vh;
     top: 0;
     box-sizing: border-box;
     background: #f4f2f4;
@@ -619,7 +619,7 @@ canvas {
     position: relative;
     width: 100%;
     width: 200vw;
-    height: 100dvh;
+    height: 100vh;
     min-height: 1330px;
     /* background: #FCFFF5; */
 }
@@ -943,12 +943,14 @@ canvas {
   }
 
   .custom-card .flex2 #cust-form input {
+    width: 100%;
     border: none;
     background: none;
     font-family: 'KMA-Regular';
     outline: none;
     color: #000;
     font-size: 18px;
+    caret-color: rgba(0,0,0,0);
   }
   .custom-card .flex2 #cust-form input:focus {
     outline: none;
@@ -988,6 +990,7 @@ canvas {
     font-family: 'KMA-Light';
     color: #fff;
     font-size: 16px;
+    
   }
   .custom-card .flex2 .btn-wrap {
     position: relative;
@@ -1036,8 +1039,16 @@ canvas {
       padding: 140px 20px;
     }
     .custom-card .flex1 .title {
-      font-size: 30px;
+      font-family: 'KMA-Bold';
+      font-size: 24px;
       text-align: center;
+      line-height: 36px;
+    }
+    .custom-card .flex1 .title:after {
+      width: 10px;
+      height: 10px;
+      bottom: 10px;
+      margin-left: 10px;
     }
 
     .custom-card .txt {
