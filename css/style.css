@@ -1051,7 +1051,7 @@ canvas {
       margin-left: 10px;
     }
 
-    .custom-card .txt {
+    .custom-card .custom-card .txt {
       text-align: center;
     }
     .custom-card .flex1 .btn-wrap {
