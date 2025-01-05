@@ -203,6 +203,7 @@ canvas {
     height: 200px;
     text-align: center;
     font-size: 7rem;
+    color: rgba(0,0,0,0.2);
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -220,7 +221,6 @@ canvas {
     border-top: 1px solid #999;
     border-bottom: 1px solid #999;
     background: #fff;
-    opacity: .1;
     border: none;
 }
 .int .swiper-slide.light {
@@ -239,8 +239,7 @@ canvas {
     border-bottom: 1px solid #999;
     padding-top: 10px;
     text-align: center;
-    color: #000;
-    opacity: 1;
+    color: rgba(0,0,0,1);
 }
 
 
@@ -526,9 +525,7 @@ canvas {
 .feature .cont3 {
   background: #E9EEFF;
 }
-/* .feature .cont4 {
-  background: #ced9ff;
-} */
+
 
 .feature .cont .cont-box {
     position: relative;
@@ -1105,7 +1102,7 @@ canvas {
       height: auto;
       flex-direction: column;
       justify-content: flex-start;
-      padding: 140px 20px;
+      padding: 100px 20px;
     }
     .custom-card .flex1 .title {
       font-family: 'KMA-Bold';
