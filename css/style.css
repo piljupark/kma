@@ -859,8 +859,52 @@ canvas {
   }
 
   @media screen and (max-width: 1080px) {
+    .font-design {
+      min-height: unset;
+    }
     .font-design .title {
-        font-size: 3rem;
+        font-size: 2rem;
+    }
+    .font-design .content .kind {
+      font-size: 1.5rem;
+    }
+    .font-design .content.cont1 {
+      height: 140px;
+      margin-left: 400px;
+      margin-top: 300px;
+    }
+    .font-design .content.cont1 .kind span {
+      font-size: 1.2rem;
+    }
+    .font-design .content.cont2 {
+      width: 400px;
+      height: 250px;
+      margin-top: 110px;
+    }
+    .font-design .content.cont3 {
+      width: 300px;
+      height: 100px;
+      bottom: unset;
+      top: 800px;
+    }
+    .font-design .content.cont3 .kind {
+      font-size: 1rem;
+    }
+    .font-design .content.cont4 {
+      width: 300px;
+      height: 240px;
+      margin-top: 300px;
+    }
+
+    .font-design .content.cont5 {
+      width: 250px;
+      height: 180px;
+      margin-top: 160px;
+    }
+    .font-design .content.cont6 {
+      width: 600px;
+      height: 370px;
+      margin-top: 260px;
     }
   }
 /* //font-design */
