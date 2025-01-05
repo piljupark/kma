@@ -60,6 +60,9 @@ canvas {
     font-size: min(3.5vw, 24px);
     box-sizing: border-box;
 }
+.font-main .desc br.mobile-only {
+  display: none;
+}
 
 .font-main .desc span {
     font-size: 30px;
@@ -170,6 +173,12 @@ canvas {
   .font-main {
     padding: 0;
   }
+  .font-main .desc {
+    margin-top: 20px;
+  }
+  .font-main .desc br.mobile-only {
+    display: block;
+  }
 }
 /* //font-main */
 
@@ -247,32 +256,37 @@ canvas {
 .int .int-simple span {
     font-weight: 700;
 }
+.int .int-simple br.pc-only {
+  display: block;
+}
 .int .int-simple br.mobile-only {
-    display: none;
+  display: none;
 }
 
 @media all and (max-width: 1080px) {
     .int .swiper {
-        width: 100%;
-        height: 55vw;
-        padding: 0 40px;
-        box-sizing: border-box;
+      width: 100%;
+      height: 55vw;
+      padding: 0 40px;
+      box-sizing: border-box;
     }
     .int .swiper .swiper-slide {
-        font-size: 8vw;
-        height: 20vw;
+      font-size: 8vw;
+      height: 20vw;
 
     }
     .int .swiper .swiper-slide-active {
-        font-size: 9.2vw;
+      font-size: 9.2vw;
     }
 
     .int .int-simple {
-        font-size: 14px;
+      font-size: 14px;
     }
-
+    .int .int-simple br.pc-only {
+      display: none;
+    }
     .int .int-simple br.mobile-only {
-        display: block;
+      display: block;
     }
 }
 /* //int */
@@ -580,6 +594,7 @@ canvas {
 
     .feature .cont .txt-box .txt {
         font-size: 18px;
+        text-align: justify;
     }
     .feature .cont .txt-box .txt br.pc-only {
         display: none;
@@ -1186,7 +1201,7 @@ canvas {
   @media screen and (max-width: 1080px) {
     .download .title {
       margin: 100px 0 50px;
-      font-size: 30px;
+      font-size: 30gpx;
     }
     .download .code-snippet-wrap {
       flex-direction: column;
