@@ -19,7 +19,6 @@
  
   <script src='https://unpkg.co/gsap@3/dist/gsap.min.js'></script>
   
-  
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   
   
@@ -446,9 +445,12 @@
       <div class="license-wrap">
         <p class="license-title">License</p>
         <p class="license">
-          한국능률협회체는 한국능률협회의 CI에서 출발한 서체입니다. 지적재산권은 한국능률협회에 있습니다. <br>
-          개인 및 기어 사용자를 포함한 모든 사용자에게 무료 제공되며, 자유로게 사용하실 수 있습니다. (단, CI 및 BI 제작에 사용불가) <br>
-          지적재산권자 이외의 사용자의 수정 및 판매를 금지하며, 배포되는 형태 그대로 사용해야 합니다.
+          한국능률협회체는 한국능률협회의 CI에서 출발한 서체입니다. <br class="mobile-only">
+          지적재산권은 한국능률협회에 있습니다. <br>
+          개인 및 기어 사용자를 포함한 모든 사용자에게 무료 제공되며, <br class="mobile-only">
+          자유롭게 사용하실 수 있습니다. (단, CI 및 BI 제작에 사용불가) <br>
+          지적재산권자 이외의 사용자의 수정 및 판매를 금지하며, <br class="mobile-only"> 
+          배포되는 형태 그대로 사용해야 합니다.
         </p>
       </div>
     </div>
@@ -690,10 +692,7 @@
     
   </script>
   
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js'></script>
-
-  <script src="js/canvas.js"></script>
+  
 
   <script>
     const swiper_ = new Swiper('.rolling-swiper', {
@@ -783,23 +782,26 @@
 
 
 
-  <script>
-    // Lenis 초기화
-    const lenis = new Lenis({
-        duration: 2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      });
-      // lenis.on('scroll', (e) => console.log(e));
-      requestAnimationFrame(function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      });
-  </script>
-  <script>
-     AOS.init();
-  </script>
+<script>
+  // Lenis 초기화
+  const lenis = new Lenis({
+      duration: 2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
+    // lenis.on('scroll', (e) => console.log(e));
+    requestAnimationFrame(function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    });
+</script>
+<script>
+    AOS.init();
+</script>
 
-  
+<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js'></script>
+
+<!-- <script src="js/canvas.js" defer></script> -->
 
 
 </body>

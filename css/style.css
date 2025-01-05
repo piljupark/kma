@@ -21,7 +21,6 @@ canvas {
     left: 0;
     transform: translate(0, -50%);
     width: 100vw;
-    height: 100dvh;
     z-index: -1;
     pointer-events: none;
 }
@@ -165,6 +164,12 @@ canvas {
     100% {
         opacity: 0;
     }
+}
+
+@media screen and (max-width: 1080px) {
+  .font-main {
+    padding: 0;
+  }
 }
 /* //font-main */
 
@@ -1051,7 +1056,7 @@ canvas {
       margin-left: 10px;
     }
 
-    .custom-card .custom-card .txt {
+    .custom-card .flex1 .txt {
       text-align: center;
     }
     .custom-card .flex1 .btn-wrap {
@@ -1174,11 +1179,19 @@ canvas {
     line-height: 1.7;
     padding-bottom: 200px;
   }
+  .download .license-wrap .license br.mobile-only {
+    display: none;
+  }
 
   @media screen and (max-width: 1080px) {
+    .download .title {
+      margin: 100px 0 50px;
+      font-size: 30px;
+    }
     .download .code-snippet-wrap {
       flex-direction: column;
       align-items: center;
+      margin-top: 50px;
     }
     .download .btn-wrap {
       max-width: 300px;
@@ -1191,5 +1204,12 @@ canvas {
     .download .code-snippet-wrap .snippet {
       width: 100%;
       max-width: 500px;
+    }
+    .download .license-wrap .license {
+      font-size: 14px;
+      margin-top: 20px;
+    }
+    .download .license-wrap .license br.mobile-only {
+      display: block;
     }
   } 
