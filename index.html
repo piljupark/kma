@@ -160,7 +160,7 @@
         <div class="cont cont2">
           <div class="cont-box">
             <video class="video" poster="video/sample1_poster.webp" preload="none" autoplay muted loop playsinline>
-              <source type="video/mp4" src="video/video_sample2-2.mp4">
+              <source type="video/mp4" src="video/video_sample_0106-2.mp4">
             </video>
           </div>
           <div class="txt-box">
@@ -447,7 +447,7 @@
         <p class="license">
           한국능률협회체는 한국능률협회의 CI에서 출발한 서체입니다. <br class="mobile-only">
           지적재산권은 한국능률협회에 있습니다. <br>
-          개인 및 기어 사용자를 포함한 모든 사용자에게 무료 제공되며, <br class="mobile-only">
+          개인 및 기업 사용자를 포함한 모든 사용자에게 무료 제공되며, <br class="mobile-only">
           자유롭게 사용하실 수 있습니다. (단, CI 및 BI 제작에 사용불가) <br>
           지적재산권자 이외의 사용자의 수정 및 판매를 금지하며, <br class="mobile-only"> 
           배포되는 형태 그대로 사용해야 합니다.
@@ -750,28 +750,36 @@
   // Hover 이벤트 설정
   contents.forEach((content) => {
     content.addEventListener('mouseenter', () => {
-      isHoveredFlow = true;
-      flowElement.style.animationPlayState = 'paused';
+      if (window.innerWidth > 768) { // 768px 초과일 때만 hover 이벤트 처리
+        isHoveredFlow = true;
+        flowElement.style.animationPlayState = 'paused';
+      }
     });
 
     content.addEventListener('mouseleave', () => {
-      isHoveredFlow = false;
-      if (isVisibleFlow) {
-        flowElement.style.animationPlayState = 'running';
+      if (window.innerWidth > 768) { // 768px 초과일 때만 hover 이벤트 처리
+        isHoveredFlow = false;
+        if (isVisibleFlow) {
+          flowElement.style.animationPlayState = 'running';
+        }
       }
     });
   });
 
   historyContents.forEach((box) => {
     box.addEventListener('mouseenter', () => {
-      isHoveredHistory = true;
-      historyElement.style.animationPlayState = 'paused';
+      if (window.innerWidth > 768) { // 768px 초과일 때만 hover 이벤트 처리
+        isHoveredHistory = true;
+        historyElement.style.animationPlayState = 'paused';
+      }
     });
 
     box.addEventListener('mouseleave', () => {
-      isHoveredHistory = false;
-      if (isVisibleHistory) {
-        historyElement.style.animationPlayState = 'running';
+      if (window.innerWidth > 768) { // 768px 초과일 때만 hover 이벤트 처리
+        isHoveredHistory = false;
+        if (isVisibleHistory) {
+          historyElement.style.animationPlayState = 'running';
+        }
       }
     });
   });

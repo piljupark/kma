@@ -218,8 +218,6 @@ canvas {
     align-items: center;
     transition: all 0.5s ease-out;
     transform: translateZ(0);
-    border-top: 1px solid #999;
-    border-bottom: 1px solid #999;
     background: #fff;
     border: none;
 }
@@ -272,7 +270,7 @@ canvas {
     .int .swiper .swiper-slide {
       font-size: 8vw;
       height: 20vw;
-
+      padding-top: 5px;
     }
     .int .swiper .swiper-slide-active {
       font-size: 9.2vw;
@@ -1148,6 +1146,7 @@ canvas {
     }
     .custom-card .flex2 .download-btn {
       display: block;
+      font-size: 1rem;
     }
   }
 /* //custom-card */
