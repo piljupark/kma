@@ -327,13 +327,13 @@ canvas {
 }
 
 .history .his-wrap {
-    position: relative;
-    height: 600px;
-    animation: moveHistory 30s linear infinite; /* 애니메이션 기본 설정 */
-    animation-play-state: paused; /* 초기 상태에서 정지 */
-    padding-left: 1000px;
-    display: flex;
-    flex-direction: column;
+  position: relative;
+  height: 600px;
+  padding-left: 1000px; /* 초기 위치 유지 */
+  display: flex;
+  flex-direction: column;
+  will-change: transform; /* 스크롤 성능 최적화 */
+  transition: transform 0.1s ease-out; /* 부드러운 움직임 */
 }
 
 @keyframes moveHistory {
@@ -654,16 +654,12 @@ canvas {
   
   .font-design .flow {
     position: relative;
-    width: calc(400%); 
+    width: 100%;
     height: 100%;
     display: flex;
-    /* animation: slide 19s linear infinite;
-    animation-play-state: running;  */
-    -webkit-animation: moveSlideshow 70s linear infinite;
-    -moz-animation: moveSlideshow 70s linear infinite;
-    -o-animation: moveSlideshow 70s linear infinite;
-    animation-play-state: paused;
-  }
+    will-change: transform; /* 스크롤 성능 최적화 */
+    transition: transform 0.1s ease-out; /* 부드러운 움직임 */
+}
   
   .font-design .flow .content:hover ~ .flow {
     animation-play-state: paused;
