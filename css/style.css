@@ -646,8 +646,8 @@ canvas {
 .font-design .title {
     position: absolute;
     font-family: 'KMA-Regular';
-    font-size: 6rem;
-    top: 100px;
+    font-size: 3.5rem;
+    top: 180px;
     left: 180px;
     z-index: 2;
   }
@@ -729,7 +729,7 @@ canvas {
     bottom: 20px;
     right: 30px;
     background: #0000A3;
-    font-family: 'KMA-Bold';
+    font-family: 'KMA-Regular';
     font-size: 1.5rem;
     color: #fff;
     border-radius: 40px;
@@ -758,16 +758,25 @@ canvas {
   .font-design .content.cont-img:hover .kind {
     transform: scale(0.91);
   }
+  .font-design .content .sub-tit {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    box-sizing: border-box;
+    left: 0px;
+    right: unset;
+  }
   
   /* kma font */
   .font-design .content.cont1 {
     width: 300px;
     height: 180px;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: #1067F4;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    margin-left: 800px;
-    margin-top: 530px;
+    margin-left: 540px;
+    margin-top: 620px;
     z-index: 2;
   }
   .font-design .content.cont1 .kind {
@@ -783,17 +792,18 @@ canvas {
     font-size: 1.5rem;
     left: 40px;
     bottom: 15px;
-    color: #6F6F6F;
+    font-family: 'KMA-Regular';
+    color: #fff;
     text-align: left;
   }
   
   /* kma kit */
   .font-design .content.cont2 { 
-    width: 620px;
-    height: 450px;
+    width: 600px;
+    height: 455px;
     background-color: #999;
-    margin-top: 140px;
-    margin-left: -70px;
+    margin-top: 200px;
+    margin-left: 40px;
     z-index: 1;
   }
   
@@ -802,11 +812,11 @@ canvas {
   
   .font-design .content.cont3 {
     position: absolute;
-    width: 620px;
-    height: 110px;
+    width: 600px;
+    height: 70px;
     background-color: #0000A3;
-    bottom: 300px;
-    left: 1030px;
+    bottom: 580px;
+    left: 880px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -821,37 +831,29 @@ canvas {
   /* kma pen */
   .font-design .content.cont4 {
     width: 540px;
-    height: 440px;
+    height: 290px;
     background-color: #ddd;
-    margin-top: 500px;
+    margin-top: 650px;
   }
   
   /* kma goods */
   .font-design .content.cont5 {
     width: 300px;
-    height: 230px;
+    height: 350px;
     background-color: #fff;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    margin-top: 320px;
+    margin-top: 240px;
   }
   
   /* kma 크터뷰 */
   .font-design .content.cont6 {
-    width: 1000px;
-    height: 570px;
-    margin-top: 400px;
+    width: 700px;
+    height: 395px;
+    margin-top: 500px;
   }
   
-  .font-design .content.cont6 .sub-tit {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10px;
-    box-sizing: border-box;
-    left: 0px;
-    right: unset;
-  }
+  
 
   @media screen and (max-width: 1080px) {
     .font-design {
