@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'KMA';
+  font-weight: 300; /* Light */
+  src: url('/fonts/KMA_Light.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'KMA';
+  font-weight: 400; /* Regular */
+  src: url('/fonts/KMA_Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'KMA';
+  font-weight: 700; /* Bold */
+  src: url('/fonts/KMA_Bold.woff2') format('woff2');
+}
