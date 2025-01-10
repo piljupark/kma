@@ -1223,7 +1223,7 @@ canvas {
   }
 
   .download .code-snippet-wrap .snippet {
-    width: 100%;
+    width: auto;
     background: #F9F9F9;
     font-family: 'D2Coding';
     padding: 40px;
