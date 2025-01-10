@@ -8,6 +8,13 @@
 
 @font-face { font-family: "SUIT-variable"; src: url("../fonts/SUIT-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: swap;}
 
+@font-face {
+  font-family: 'D2Coding';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * { margin: 0; padding: 0; border: none; background: none; }
 
 html, body { margin: 0; padding:0;}
@@ -1216,9 +1223,11 @@ canvas {
   }
 
   .download .code-snippet-wrap .snippet {
-    width: 50%;
-    height: 200px;
+    width: 100%;
     background: #F9F9F9;
+    font-family: 'D2Coding';
+    padding: 40px;
+    box-sizing: border-box;
   }
 
   .download .license-wrap {
