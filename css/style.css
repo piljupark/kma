@@ -644,14 +644,14 @@ canvas {
 .font-design {
     position: relative;
     width: 100%;
-    width: 200vw;
     height: 100vh;
     min-height: 1330px;
+    overflow: hidden;
     /* background: #FCFFF5; */
 }
 
 .font-design .title {
-    position: absolute;
+    position: relative;
     font-family: 'KMA-Regular';
     font-size: 3.5rem;
     top: 180px;
@@ -676,6 +676,7 @@ canvas {
     position: relative;
     width: 100%;
     display: flex;
+    padding-left: 1600px;
   }
   
   
@@ -782,8 +783,8 @@ canvas {
     background-color: #1067F4;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    margin-left: 540px;
-    margin-top: 620px;
+    margin-left: 40px;
+    margin-top: 650px;
     z-index: 2;
   }
   .font-design .content.cont1 .kind {
@@ -823,13 +824,14 @@ canvas {
     height: 70px;
     background-color: #0000A3;
     bottom: 580px;
-    left: 880px;
+    left: 2269px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
   .font-design .content.cont3 .kind {
+    padding: 0;
     font-family: 'KMA-Regular';
     font-size: 2rem;
     color: #fff;
@@ -858,6 +860,12 @@ canvas {
     width: 700px;
     height: 395px;
     margin-top: 500px;
+  }
+
+  .font-design .content.cont7 {
+    width: 700px;
+    height: 395px;
+    margin-top: 400px;
   }
   
   

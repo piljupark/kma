@@ -197,10 +197,11 @@
     <div class="over-wrap">
       <div class="font-design flow-wrap">
         <div class="flow" data-aos="fade-up" data-aos-delay="450">
-          <p class="title" data-aos="fade-right" data-aos-delay="300">Connecting<br>The Future,<br><br>
-          Connecting<br>the world
-          </p>
+          
           <div class="content-wrapper">
+            <p class="title" data-aos="fade-right" data-aos-delay="300">Connecting<br>The Future,<br><br>
+              Connecting<br>the world
+              </p>
             <span class="content cont1 hover-paused">
               <p class="kind">
                 KMA 
@@ -244,6 +245,15 @@
               <p class="sub-tit">
                 <span>크마 TV</span>
                 <span>KMA | CTF 2025 : BEYOND BOUNDARY 현장 스케치</span>
+              </p>
+              <a href="https://www.youtube.com/playlist?list=PLfYWPKSwpaSs-D9PI7t8Y4Un8oYMWw6UB" target="_blank" class="link">보러가기</a>
+            </span>
+            <span class="content cont7 cont-img hover-paused">
+              <img src="images/kma_design5.webp" alt="" loading="lazy" width="1000" height="560">
+              <!-- <p class="kind">KMA 크터뷰</p> -->
+              <p class="sub-tit">
+                <span>크마 TV</span>
+                <span>3/4기 인터뷰</span>
               </p>
               <a href="https://www.youtube.com/playlist?list=PLfYWPKSwpaSs-D9PI7t8Y4Un8oYMWw6UB" target="_blank" class="link">보러가기</a>
             </span>
@@ -668,61 +678,73 @@
 </script> -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-  const flowElement = document.querySelector('.font-design .flow'); // font-design 영역
-  const historyElement = document.querySelector('.history .his-wrap'); // history 영역
+  const fontDesignWrapper = document.querySelector('.font-design .content-wrapper'); // font-design의 content-wrapper
+  const fontDesignElement = document.querySelector('.font-design'); // font-design 영역
+
+  const historyWrapper = document.querySelector('.history .his-wrap'); // history의 his-wrap
+  const historyElement = document.querySelector('.history'); // history 영역
 
   let lastScrollY = window.scrollY; // 이전 스크롤 위치
-  let isVisibleFlow = false; // flow 가시 상태
-  let isVisibleHistory = false; // history 가시 상태
+  let isFontDesignVisible = false; // font-design 가시 상태
+  let isHistoryVisible = false; // history 가시 상태
+
+  // 속도 조절 변수
+  const fontDesignSpeed = 1; // font-design 이동 속도 조절 (기본값 1)
+  const historySpeed = 2; // history 이동 속도 조절 (기본값 2)
 
   // Intersection Observer 설정
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.target === flowElement) {
-        isVisibleFlow = entry.intersectionRatio > 0.1; // flow 10% 이상 보일 때
-      }
-      if (entry.target === historyElement) {
-        isVisibleHistory = entry.intersectionRatio > 0.1; // history 10% 이상 보일 때
-      }
-    });
-  }, { threshold: [0.1] }); // 10% 보일 때 트리거
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.target === fontDesignElement) {
+          isFontDesignVisible = entry.isIntersecting; // font-design이 보이면 true
+        }
+        if (entry.target === historyElement) {
+          isHistoryVisible = entry.isIntersecting; // history가 보이면 true
+        }
+      });
+    },
+    { threshold: 0.1 } // 10% 이상 보일 때 트리거
+  );
 
   // Observer 대상 등록
-  if (flowElement) observer.observe(flowElement);
+  if (fontDesignElement) observer.observe(fontDesignElement);
   if (historyElement) observer.observe(historyElement);
 
   // 스크롤 이벤트 처리
   const handleScroll = () => {
-  const currentScrollY = window.scrollY; // 현재 스크롤 위치
-  const scrollDelta = (currentScrollY - lastScrollY) * 4; // 스크롤 변화량의 2배
+    const currentScrollY = window.scrollY; // 현재 스크롤 위치
+    const scrollDelta = currentScrollY - lastScrollY; // 스크롤 변화량
 
-  // flow 섹션: 좌 → 우로 이동
-  if (flowElement && isVisibleFlow) {
-    const currentFlowTransform = getComputedStyle(flowElement).transform;
-    const currentFlowTranslate = currentFlowTransform !== 'none'
-      ? parseFloat(currentFlowTransform.split(',')[4]) || 0
-      : 0;
-    flowElement.style.transform = `translateX(${currentFlowTranslate + scrollDelta}px)`;
-  }
+    // font-design의 content-wrapper 이동 (좌로 이동)
+    if (isFontDesignVisible && fontDesignWrapper) {
+      const currentTransform = getComputedStyle(fontDesignWrapper).transform;
+      const currentTranslateX = currentTransform !== 'none'
+        ? parseFloat(currentTransform.split(',')[4]) || 0
+        : 0;
 
-  // history 섹션: 우 → 좌로 이동
-  if (historyElement && isVisibleHistory) {
-    const currentHistoryTransform = getComputedStyle(historyElement).transform;
-    const currentHistoryTranslate = currentHistoryTransform !== 'none'
-      ? parseFloat(currentHistoryTransform.split(',')[4]) || 0
-      : 0;
-    historyElement.style.transform = `translateX(${currentHistoryTranslate - scrollDelta}px)`;
-  }
+      fontDesignWrapper.style.transform = `translateX(${currentTranslateX - scrollDelta * 2}px)`;
+    }
 
-  lastScrollY = currentScrollY; // 현재 스크롤 위치 저장
-};
+    // history의 his-wrap 이동 (우로 이동)
+    if (isHistoryVisible && historyWrapper) {
+      const currentTransform = getComputedStyle(historyWrapper).transform;
+      const currentTranslateX = currentTransform !== 'none'
+        ? parseFloat(currentTransform.split(',')[4]) || 0
+        : 0;
+
+      historyWrapper.style.transform = `translateX(${currentTranslateX - scrollDelta * 5}px)`;
+    }
+
+    lastScrollY = currentScrollY; // 현재 스크롤 위치 저장
+  };
 
   // 스크롤 이벤트 리스너 추가
   window.addEventListener('scroll', handleScroll);
 
   // 초기 transform 설정
-  if (flowElement) flowElement.style.transform = 'translateX(0)';
-  if (historyElement) historyElement.style.transform = 'translateX(0)';
+  if (fontDesignWrapper) fontDesignWrapper.style.transform = 'translateX(0)';
+  if (historyWrapper) historyWrapper.style.transform = 'translateX(0)';
 });
 </script>
 
