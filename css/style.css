@@ -474,7 +474,7 @@ canvas {
     }
     .history .his-wrap {
       padding-left: 0;
-      animation: moveHistory 20s linear infinite;
+      /* animation: moveHistory 20s linear infinite; */
     }
     .his-title {
         font-size: max(3.8vw, 24px);
@@ -877,6 +877,7 @@ canvas {
     }
     .font-design .content-wrapper {
       height: 950px;
+      padding-left: 100px;
     }
     .font-design .title {
       font-size: 2rem;
@@ -899,10 +900,10 @@ canvas {
       margin-top: 110px;
     }
     .font-design .content.cont3 {
-      width: 300px;
+      width: 400px;
       height: 100px;
-      bottom: unset;
-      top: 800px;
+      bottom: 370px;
+      left: 1005px;
     }
     .font-design .content.cont3 .kind {
       font-size: 1rem;
@@ -919,9 +920,14 @@ canvas {
       margin-top: 160px;
     }
     .font-design .content.cont6 {
-      width: 600px;
-      height: 370px;
+      width: 500px;
+      height: 270px;
       margin-top: 260px;
+    }
+    .font-design .content.cont7 {
+      width: 500px;
+      height: 270px;
+      margin-top: 160px;
     }
     .font-design .content .link {
       width: 120px;
