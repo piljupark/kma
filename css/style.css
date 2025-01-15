@@ -35,7 +35,7 @@ canvas {
 .font-main {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     padding: 300px 0 200px;
     box-sizing: border-box;
     overflow: hidden;
@@ -1276,7 +1276,7 @@ canvas {
   @media screen and (max-width: 1080px) {
     .download .title {
       margin: 100px 0 50px;
-      font-size: 30gpx;
+      font-size: 30px;
     }
     .download .code-snippet-wrap {
       flex-direction: column;
@@ -1294,6 +1294,7 @@ canvas {
     .download .code-snippet-wrap .snippet {
       width: 100%;
       max-width: 500px;
+      overflow-wrap: anywhere;
     }
     .download .license-wrap .license {
       font-size: 14px;
