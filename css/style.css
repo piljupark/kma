@@ -685,6 +685,7 @@ canvas {
     width: 100%;
     height: 100vh;
     min-height: 1330px;
+    max-height: 1556px;
     overflow: hidden;
     /* background: #FCFFF5; */
 }
@@ -863,7 +864,7 @@ canvas {
     height: 70px;
     background-color: #0000A3;
     bottom: 580px;
-    left: 2269px;
+    left: 4669px;
     display: flex;
     justify-content: center;
     align-items: center;
