@@ -43,6 +43,7 @@
         <span class="txt-dummy dummy-5">래</span>
         <span class="txt-dummy dummy-6">케</span>
         <span class="txt-dummy dummy-7">에</span>
+        <div class="bg-circle"></div>
     </div>
     <!-- //-->
 
@@ -599,83 +600,6 @@
       coverflowEffect: { rotate: -20, depth: 250, slideShadows: false },
     });
   </script>
-
-<!-- <script>
-  document.addEventListener('DOMContentLoaded', () => {
-  const flowElement = document.querySelector('.flow');
-  const historyElement = document.querySelector('.his-wrap');
-  const contents = document.querySelectorAll('.content');
-  const historyContents = document.querySelectorAll('.his-wrap .img-box');
-
-  let isHoveredFlow = false; // Flow Hover 상태
-  let isHoveredHistory = false; // History Hover 상태
-  let isVisibleFlow = false; // Flow 화면 표시 상태
-  let isVisibleHistory = false; // History 화면 표시 상태
-
-  // Intersection Observer 설정
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.target === flowElement) {
-        isVisibleFlow = entry.isIntersecting;
-        if (isVisibleFlow && !isHoveredFlow) {
-          flowElement.style.animationPlayState = 'running';
-        } else {
-          flowElement.style.animationPlayState = 'paused';
-        }
-      }
-
-      if (entry.target === historyElement) {
-        isVisibleHistory = entry.isIntersecting;
-        if (isVisibleHistory && !isHoveredHistory) {
-          historyElement.style.animationPlayState = 'running';
-        } else {
-          historyElement.style.animationPlayState = 'paused';
-        }
-      }
-    });
-  });
-
-  observer.observe(flowElement);
-  observer.observe(historyElement);
-
-  // Hover 이벤트 설정
-  contents.forEach((content) => {
-    content.addEventListener('mouseenter', () => {
-      if (window.innerWidth > 768) { // 768px 초과일 때만 hover 이벤트 처리
-        isHoveredFlow = true;
-        flowElement.style.animationPlayState = 'paused';
-      }
-    });
-
-    content.addEventListener('mouseleave', () => {
-      if (window.innerWidth > 768) { // 768px 초과일 때만 hover 이벤트 처리
-        isHoveredFlow = false;
-        if (isVisibleFlow) {
-          flowElement.style.animationPlayState = 'running';
-        }
-      }
-    });
-  });
-
-  historyContents.forEach((box) => {
-    box.addEventListener('mouseenter', () => {
-      if (window.innerWidth > 768) { // 768px 초과일 때만 hover 이벤트 처리
-        isHoveredHistory = true;
-        historyElement.style.animationPlayState = 'paused';
-      }
-    });
-
-    box.addEventListener('mouseleave', () => {
-      if (window.innerWidth > 768) { // 768px 초과일 때만 hover 이벤트 처리
-        isHoveredHistory = false;
-        if (isVisibleHistory) {
-          historyElement.style.animationPlayState = 'running';
-        }
-      }
-    });
-  });
-});
-</script> -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
   const fontDesignWrapper = document.querySelector('.font-design .content-wrapper'); // font-design의 content-wrapper
@@ -723,7 +647,7 @@
         ? parseFloat(currentTransform.split(',')[4]) || 0
         : 0;
 
-      fontDesignWrapper.style.transform = `translateX(${currentTranslateX - scrollDelta * 2}px)`;
+      fontDesignWrapper.style.transform = `translateX(${currentTranslateX - scrollDelta * 4}px)`;
     }
 
     // history의 his-wrap 이동 (우로 이동)
@@ -733,7 +657,7 @@
         ? parseFloat(currentTransform.split(',')[4]) || 0
         : 0;
 
-      historyWrapper.style.transform = `translateX(${currentTranslateX - scrollDelta * 5}px)`;
+      historyWrapper.style.transform = `translateX(${currentTranslateX - scrollDelta * 8}px)`;
     }
 
     lastScrollY = currentScrollY; // 현재 스크롤 위치 저장
@@ -771,7 +695,7 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js'></script>
 
-<script src="js/canvas.js" defer></script>
+<!-- <script src="js/canvas.js" defer></script> -->
 
 
 </body>
