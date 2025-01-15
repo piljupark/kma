@@ -220,8 +220,10 @@ canvas {
     display: block;
   }
   .font-main .bg-circle {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
+    opacity: .5;
+    filter: blur(50px);
   }
 }
 /* //font-main */
@@ -511,7 +513,7 @@ canvas {
     }
     .history .his-wrap {
       padding-left: 0;
-      /* animation: moveHistory 20s linear infinite; */
+      animation: moveHistory 15s linear infinite;
     }
     .his-title {
         font-size: max(3.8vw, 24px);
@@ -1079,7 +1081,7 @@ canvas {
     outline: none;
     color: #000;
     font-size: 18px;
-    caret-color: rgba(0,0,0,0);
+    caret-color: rgba(231,143,74,1);
   }
   .custom-card .flex2 #cust-form input:focus {
     outline: none;
