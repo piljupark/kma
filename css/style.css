@@ -219,6 +219,10 @@ canvas {
   .font-main .desc br.mobile-only {
     display: block;
   }
+  .font-main .bg-circle {
+    width: 500px;
+    height: 500px;
+  }
 }
 /* //font-main */
 
