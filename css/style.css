@@ -1433,6 +1433,11 @@ canvas {
     padding: 40px;
     box-sizing: border-box;
   }
+  .download .code-snippet-wrap .snippet:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   .download .license-wrap {
     position: relative;
