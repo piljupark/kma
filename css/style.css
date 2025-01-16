@@ -651,29 +651,34 @@ canvas {
 }
 
 @media screen and (max-width: 768px) {
-    .feature .cont .cont-box {
-        width: 50%;
-        min-width: 300px;
-        padding-top: max(300px, 50%)
-    }
-    .feature .cont .txt-box {
-        max-width: 300px;
-        min-width: unset;
-        gap: 25px;
-    }
-    .feature .cont .txt-box .title {
-        font-size: 20px;
-    }
-    .feature .cont .txt-box .title:after {
-      width: 6px;
-      height: 6px;
-      bottom: 7px;
-      margin-left: 5px;
-    }
+  .feature .cont {
+    padding: 0 20px;
+    gap: 60px;
+  }
+  .feature .cont .cont-box {
+    width: 100%;
+    min-width: unset;
+    padding-top: max(300px, 100%)
+  }
+  .feature .cont .txt-box {
+    width: 100%;
+    max-width: 500px;
+    min-width: unset;
+    gap: 25px;
+  }
+  .feature .cont .txt-box .title {
+    font-size: 20px;
+  }
+  .feature .cont .txt-box .title:after {
+    width: 6px;
+    height: 6px;
+    bottom: 7px;
+    margin-left: 5px;
+  }
 
-    .feature .cont .txt-box .txt {
-        font-size: 14px;
-    }
+  .feature .cont .txt-box .txt {
+      font-size: 14px;
+  }
 }
 /* //feature */
 
@@ -692,6 +697,10 @@ canvas {
     max-height: 1556px;
     overflow: hidden;
     /* background: #FCFFF5; */
+}
+
+.font-design-mo {
+  display: none;
 }
 
 .font-design .title {
@@ -978,6 +987,135 @@ canvas {
       height: 50px;
       font-size: 1rem;
     }
+  }
+
+  @media screen and (max-width: 768px) {
+    .font-design-pc {
+      display: none;
+    }
+
+    .font-design-mo {
+      position: relative;
+      display: block;
+      float: left;
+      width: 100%;
+      height: auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+      padding-bottom: 100px;
+    }
+
+    .font-design-mo .title {
+      font-family: 'KMA-Regular';
+      font-size: 2rem;
+      padding-top: 100px;
+      /* display: flex;
+      gap: 40px; */
+    }
+
+    .font-design-mo .title p {
+      min-inline-size: fit-content;
+    }
+
+    .font-design-mo .title p span {
+      position: relative;
+      float: left;
+      width: 100%;
+      margin-top: 20px;
+      text-align: right;
+    }
+    .font-design-mo .title .view-design{
+      width: 100%;
+      height: 146px;
+      background: #1067F4;
+      border-radius: 10px;
+     }
+
+     .font-design-mo .title .view-design p {
+        text-align: right;
+        background: #fff;
+        width: auto;
+        min-inline-size: min-content;
+     }
+
+     .font-design-mo .cont-wrap {
+      position: relative;
+      width: 100%;
+      float: left;
+      margin-top: 60px;
+     }
+     .font-design-mo .cont-wrap .cont {
+      position: relative;
+      float: left;
+      width: 100%;
+      height: auto;
+      margin-top: 40px;
+     }
+
+     .font-design-mo .cont-wrap .cont.txt-cont {
+      width: 100%;
+      font-family: 'KMA-Regular';
+      color: #fff;
+      font-size: 18px;
+      text-align: center;
+      padding: 15px 20px;
+      box-sizing: border-box;
+      border-radius: 10px;
+     }
+     .font-design-mo .cont-wrap .cont .img-wrap {
+      position: relative;
+      width: 100%;
+     }
+
+     .font-design-mo .cont-wrap .cont .img-wrap img {
+      width: 100%;
+      border-radius: 10px;
+     }
+
+     .font-design-mo .cont-wrap .cont .img-wrap .link {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      font-family: 'KMA-Regular';
+      font-size: 16px;
+      color: #fff;
+      background: #0000A3;
+      border-radius: 40px;
+     }
+
+     .font-design-mo .cont-wrap .cont .tit-wrap {
+      position: relative;
+      float: left;
+      width: 100%;
+      padding: 10px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'KMA-Light';
+      font-size: 14px;
+      color: #767676;
+      box-sizing: border-box;
+     }
+    
+     .font-design-mo .cont-wrap .cont.cont2 {
+      background: #0000A3;
+     }
+
+     .font-design-mo .cont-wrap .cont.cont4 {
+      width: 65%;
+      float: right;
+     }
+
+     .font-design-mo .cont-wrap .cont.cont5 {
+      width: 50%;
+      height: 130px;
+      background: #ADBAD9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+     }
+    
   }
 /* //font-design */
 
