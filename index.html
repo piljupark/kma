@@ -386,6 +386,11 @@
         }
         if (entry.target === historyElement) {
           isHistoryVisible = entry.isIntersecting; // history가 보이면 true
+          if (entry.isIntersecting && window.innerWidth <= 728) {
+              historyWrapper.classList.add('active'); // 애니메이션 활성화
+          } else {
+              historyWrapper.classList.remove('active'); // 애니메이션 정지
+          }
         }
       });
     },

@@ -514,6 +514,10 @@ canvas {
     .history .his-wrap {
       padding-left: 0;
       animation: moveHistory 15s linear infinite;
+      animation-play-state: paused;
+    }
+    .history .his-wrap.active {
+      animation-play-state: running;
     }
     .his-title {
         font-size: max(3.8vw, 24px);
