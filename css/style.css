@@ -1427,7 +1427,7 @@ canvas {
   }
 
   .download .code-snippet-wrap .snippet {
-    width: auto;
+    width: 50%;
     background: #F9F9F9;
     font-family: 'D2Coding';
     padding: 40px;
