@@ -77,24 +77,24 @@
         <div class="his-wrap"> <!-- flow -->
           <div class="img-section">
             <div class="img-box">
-              <img src="images/bg_0.webp" alt="" class="his-bg" loading="lazy" width="700" height="345">
-              <img src="images/his_logo1_w.webp" alt="" class="his-logo" loading="lazy" width="750" height="162">
+              <img src="images/bg_0.webp" alt="" class="his-bg" width="700" height="345">
+              <img src="images/his_logo1_w.webp" alt="" class="his-logo" width="750" height="162">
             </div>
             <div class="img-box">
-              <img src="images/bg_1.webp" alt="" class="his-bg" loading="lazy" width="700" height="485">
+              <img src="images/bg_1.webp" alt="" class="his-bg" width="700" height="485">
             </div>
             <div class="img-box"></div>
             <div class="img-box">
-              <img src="images/bg_2.webp" alt="" class="his-bg" loading="lazy" width="700" height="482">
-              <img src="images/his_logo2_w.webp" alt="" class="his-logo" loading="lazy" width="591" height="447">
+              <img src="images/bg_2.webp" alt="" class="his-bg" width="700" height="482">
+              <img src="images/his_logo2_w.webp" alt="" class="his-logo" width="591" height="447">
             </div>
             <div class="img-box">
-              <img src="images/bg_3.webp" alt="" class="his-bg" loading="lazy" width="700" height="467">
-              <img src="images/his_logo3_w.webp" alt="" class="his-logo" loading="lazy" width="533" height="54">
+              <img src="images/bg_3.webp" alt="" class="his-bg" width="700" height="467">
+              <img src="images/his_logo3_w.webp" alt="" class="his-logo" width="533" height="54">
             </div>
             <div class="img-box">
-              <img src="images/bg_4.webp" alt="" class="his-bg" loading="lazy" width="700" height="467">
-              <img src="images/his_logo4_w.webp" alt="" class="his-logo" loading="lazy" width="533" height="54">
+              <img src="images/bg_4.webp" alt="" class="his-bg" width="700" height="467">
+              <img src="images/his_logo4_w.webp" alt="" class="his-logo" width="533" height="54">
             </div>
           </div>
           <div class="years-section">
@@ -210,7 +210,7 @@
               </p>
             </span>
             <span class="content cont2 cont-img hover-paused">
-              <img src="images/kma_design1.webp" alt="" loading="lazy" width="700" height="438">
+              <img src="images/kma_design1.webp" alt="" width="700" height="438">
               <!-- <p class="kind">
                 KMA KIT
               </p> -->
@@ -223,7 +223,7 @@
               <p class="kind">GLOBAL 1st 지식서비스 기관</p>
             </span>
             <span class="content cont4 cont-img hover-paused">
-              <img src="images/kma_design2.webp" alt="" loading="lazy" width="700" height="478">
+              <img src="images/kma_design2.webp" alt="" width="700" height="478">
               <!-- <p class="kind">
                 KMA GOODS
               </p> -->
@@ -233,7 +233,7 @@
               </p>
             </span>
             <span class="content cont5 cont-img hover-paused">
-              <img src="images/kma_design3.webp" alt="" loading="lazy" width="700" height="700">
+              <img src="images/kma_design3.webp" alt="" width="700" height="700">
               <!-- <p class="kind">KMA GOODS</p> -->
               <p class="sub-tit">
                 <span>KMA GOODS</span>
@@ -241,7 +241,7 @@
               </p>
             </span>
             <span class="content cont6 cont-img hover-paused">
-              <img src="images/kma_design5.webp" alt="" loading="lazy" width="1000" height="560">
+              <img src="images/kma_design5.webp" alt="" width="1000" height="560">
               <!-- <p class="kind">KMA 크터뷰</p> -->
               <p class="sub-tit">
                 <span>크마 TV</span>
@@ -250,7 +250,7 @@
               <a href="https://www.youtube.com/playlist?list=PLfYWPKSwpaSs-D9PI7t8Y4Un8oYMWw6UB" target="_blank" class="link">보러가기</a>
             </span>
             <span class="content cont7 cont-img hover-paused">
-              <img src="images/kma_design6.webp" alt="" loading="lazy" width="1000" height="560">
+              <img src="images/kma_design6.webp" alt="" width="1000" height="560">
               <!-- <p class="kind">KMA 크터뷰</p> -->
               <p class="sub-tit">
                 <span>크마 TV</span>
@@ -365,10 +365,13 @@
   document.addEventListener('DOMContentLoaded', () => {
   const fontDesignWrapper = document.querySelector('.font-design .content-wrapper'); // font-design의 content-wrapper
   const fontDesignElement = document.querySelector('.font-design'); // font-design 영역
+  const cont7 = document.querySelector('.font-design .content.cont7'); // 중단 조건을 확인할 cont7
+  
 
   const historyWrapper = document.querySelector('.history .his-wrap'); // history의 his-wrap
   const historyElement = document.querySelector('.history'); // history 영역
 
+  let isPaused = false; // 슬라이딩 정지 여부
   let lastScrollY = window.scrollY; // 이전 스크롤 위치
   let isFontDesignVisible = false; // font-design 가시 상태
   let isHistoryVisible = false; // history 가시 상태
@@ -386,7 +389,7 @@
         }
         if (entry.target === historyElement) {
           isHistoryVisible = entry.isIntersecting; // history가 보이면 true
-          if (entry.isIntersecting && window.innerWidth <= 728) {
+          if (entry.isIntersecting && window.innerWidth <= 1080) {
               historyWrapper.classList.add('active'); // 애니메이션 활성화
           } else {
               historyWrapper.classList.remove('active'); // 애니메이션 정지
@@ -409,7 +412,7 @@
 
     // 728px 이하 속도
     const adjustedHistorySpeed = isSmallScreen ? 4 : historySpeed;
-    const adjustedFontDesignSpeed = isSmallScreen ? 8.35 : fontDesignSpeed;
+    const adjustedFontDesignSpeed = isSmallScreen ? 6 : fontDesignSpeed;
 
     // font-design의 content-wrapper 이동 (좌로 이동)
     if (isFontDesignVisible && fontDesignWrapper) {
