@@ -658,7 +658,8 @@ canvas {
   .feature .cont .cont-box {
     width: 100%;
     min-width: unset;
-    padding-top: max(300px, 100%)
+    max-width: 500px;
+    padding-top: min(500px, 100%);
   }
   .feature .cont .txt-box {
     width: 100%;
