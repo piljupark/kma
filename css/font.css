@@ -621,7 +621,6 @@ canvas {
     font-family: 'SUIT-variable';
     font-size: min(3vw, 22px);
     line-height: 1.7;
-    text-align: justify;
 }
 
 @media screen and (max-width: 1080px) {
